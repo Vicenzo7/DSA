@@ -29,25 +29,48 @@ public class FindTriplet {
 //            }
 //        }
 
+        //using Sorting a nd two pointer
+        Arrays.sort(arr);
+        for (int i = 0; i < arr.length-2 ; i++) {
+            int start=i+1,end=arr.length-1;
+            while(start<end)
+            {
+                if(arr[i]+arr[start]+arr[end]==sum)
+                {
+//                    System.out.println(arr[i]+" "+arr[start]+" "+arr[end]);
+                    ans.add(arr[i]);
+                    ans.add(arr[start++]);
+                    ans.add(arr[end--]);
+                }
+                else if(arr[i]+arr[start]+arr[end]<sum)
+                {
+                    start++;
+                }
+                else //arr[i]+arr[start]+arr[end]>sum
+                {
+                    end--;
+                }
+            }
+        }
 
 
 
         //optimised approach using hashset
 
-        for (int i = 0; i < arr.length-2 ; i++) {
-            HashSet<Integer> set = new HashSet<>();
-            int temp=sum-arr[i];
-            for (int j = i+1; j < arr.length; j++) {
-                if(set.contains(temp-arr[j]))
-                {
-                    ans.add(arr[i]);
-                    ans.add(arr[j]);
-                    ans.add(temp-arr[j]);
-                   return ans;
-                }
-                set.add(arr[j]);
-            }
-        }
+//        for (int i = 0; i < arr.length-2 ; i++) {
+//            HashSet<Integer> set = new HashSet<>();
+//            int temp=sum-arr[i];
+//            for (int j = i+1; j < arr.length; j++) {
+//                if(set.contains(temp-arr[j]))
+//                {
+//                    ans.add(arr[i]);
+//                    ans.add(arr[j]);
+//                    ans.add(temp-arr[j]);
+//                   return ans;
+//                }
+//                set.add(arr[j]);
+//            }
+//        }
         return ans;
     }
 }

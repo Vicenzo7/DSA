@@ -37,7 +37,7 @@ public class KeyPair {
 //            if(arr[start]+arr[end]==sum)
 //            {
 //                ans.add(arr[start++]);
-//                ans.add(arr[end++]);
+//                ans.add(arr[end--]);
 //            }
 //            else if (arr[start]+arr[end]>sum)
 //            {
