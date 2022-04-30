@@ -26,11 +26,56 @@ public class SpiralMatrix {
 
 
 
-        while(rowBegin<= rowEnd && colBegin<= colEnd){
+//        while(rowBegin<= rowEnd && colBegin<= colEnd){
+//
+//            // printing 1,2,3
+//            for(int i= colBegin; i<=colEnd; i++){
+//                list.add(matrix[rowBegin][i]);
+//            }
+//
+//            //moving downward
+//            rowBegin++;
+//
+//            //printing last element of 1st row that we are printing 6 and than traversing to downward
+//            for(int i= rowBegin; i<=rowEnd; i++){
+//                list.add(matrix[i][colEnd]);
+//            }
+//
+//            //know for traversing towards left side
+//            colEnd--;
+//
+//            //traversing towards left side of in last row
+//            if(rowBegin<=rowEnd){
+//                for(int i= colEnd; i>=colBegin; i--){
+//                    list.add(matrix[rowEnd][i]);
+//                }
+//            }
+//
+//            //than traversing upward from last row
+//            rowEnd--;
+//
+//            // traversing to right side again
+//            if(colBegin<=colEnd){
+//                for(int i=rowEnd; i>=rowBegin; i--){
+//                    list.add(matrix[i][colBegin]);
+//                }
+//            }
+//
+//
+//            colBegin++;
+//        }
+//        return list;
+
+        int row= matrix.length;
+        int col=matrix[0].length;
+        int count=0,total=row*col;
+
+        while(count<total){
 
             // printing 1,2,3
             for(int i= colBegin; i<=colEnd; i++){
                 list.add(matrix[rowBegin][i]);
+                count++;
             }
 
             //moving downward
@@ -39,27 +84,32 @@ public class SpiralMatrix {
             //printing last element of 1st row that we are printing 6 and than traversing to downward
             for(int i= rowBegin; i<=rowEnd; i++){
                 list.add(matrix[i][colEnd]);
+                count++;
             }
 
             //know for traversing towards left side
             colEnd--;
 
             //traversing towards left side of in last row
-            if(rowBegin<=rowEnd){
+
                 for(int i= colEnd; i>=colBegin; i--){
                     list.add(matrix[rowEnd][i]);
+                    count++;
                 }
-            }
+
 
             //than traversing upward from last row
             rowEnd--;
 
             // traversing to right side again
-            if(colBegin<=colEnd){
+
                 for(int i=rowEnd; i>=rowBegin; i--){
                     list.add(matrix[i][colBegin]);
+                    count++;
                 }
-            }
+
+
+
             colBegin++;
         }
         return list;
