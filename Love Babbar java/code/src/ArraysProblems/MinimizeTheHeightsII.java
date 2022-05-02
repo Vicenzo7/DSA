@@ -12,7 +12,10 @@ public class MinimizeTheHeightsII {
     }
 
     public static int getminDiff(int[] arr, int n, int k) {
-       Arrays.sort(arr);
+
+        //TC O(nlogn) for sorting
+        Arrays.sort(arr);
+
        int diff=arr[n-1]-arr[0];
        int max,min;
        for(int i=1;i<n;i++)

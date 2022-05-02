@@ -15,11 +15,11 @@ public class FirstRepeatingElementIndex {
         for(int i:arr)
         {
             ans.put(i,ans.getOrDefault(i,0)+1);
+
         }
         for (int i = 0; i <n ; i++) {
             if(ans.get(arr[i])>=2);
             {
-
                 return i+1;
             }
         }
