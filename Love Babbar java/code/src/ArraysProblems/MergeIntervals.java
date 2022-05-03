@@ -17,12 +17,12 @@ public class MergeIntervals {
         for (int[] a : intervals) {
             System.out.println(Arrays.toString(a));
         }
-//        int[][] ans = merge(intervals);
+        int[][] ans = merge(intervals);
 
-        int[][] ans2=mergeStack(intervals);
+//        int[][] ans2=mergeStack(intervals);
         System.out.println();
 
-        for (int[] a : ans2) {
+        for (int[] a : ans) {
             System.out.println(Arrays.toString(a));
         }
 
@@ -49,7 +49,7 @@ public class MergeIntervals {
 
         for (int[] i : intervals) {
             if (i[0] <= end) {
-                end = Math.max(i[0], end);
+                end = Math.max(i[1], end);
             } else {
                 res.add(new int[]{start, end});
                 start = i[0];
