@@ -40,7 +40,7 @@ public class SquareRoot {
            if(square==target){
                return mid;
            }
-           else if(mid*mid <target){
+           else if(square <target){
                //if square< target we are storing mid in ans because if it's not a perfect square we would store the nearest square;
                ans=mid;
                start=mid+1;
