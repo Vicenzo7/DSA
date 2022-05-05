@@ -28,7 +28,7 @@ public class SquareRoot {
    static long binarySearch(int target)
    {
 
-       //we took long for big numbers
+       //we took long for big numbers so integer overflow doesn't occur
        long start=0;
        long end = target-1;
        long ans=-1;
