@@ -5,7 +5,7 @@ import java.util.HashSet;
 
 public class CheckIfNandItsDoubleExist {
     public static void main(String[] args) {
-        int[] arr = {-2,0,10,-19,4,6,-8};
+        int[] arr = {-1,-2,-3};
 
 //        Arrays.sort(arr);
 //        int k=Arrays.binarySearch(arr,7);
@@ -32,31 +32,32 @@ public class CheckIfNandItsDoubleExist {
 
 
         //optimised
-        HashSet<Integer> set = new HashSet<>();
-        for (int i = 0; i < n; i++) {
-            int sum1=arr[i]*2;
-            int sum2=arr[i]/2;
-            if(set.contains(sum1))
-            {
-                return true;
-            }
-            else if(set.contains(sum2)){
-                if(arr[i]%2==0)
-                {
-                    return true;
-                }
-            }
-            else{
-                set.add(arr[i]);
-            }
-        }
-        return false;
+//        HashSet<Integer> set = new HashSet<>();
+//        for (int i = 0; i < n; i++) {
+//            int sum1=arr[i]*2;
+//            int sum2=arr[i]/2;
+//            if(set.contains(sum1))
+//            {
+//                return true;
+//            }
+//            else if(set.contains(sum2)){
+//                if(arr[i]%2==0)
+//                {
+//                    return true;
+//                }
+//            }
+//            else{
+//                set.add(arr[i]);
+//            }
+//        }
+//        return false;
 
 
 
         //Approach 3 TC: O(nlogn)
 //        Arrays.sort(arr);
 //        for (int i = 0; i < n; i++) {
+//            //for positive number
 //            int index=Arrays.binarySearch(arr,arr[i]*2);
 //            if(index>=0 && i!=index)
 //            {
@@ -64,6 +65,38 @@ public class CheckIfNandItsDoubleExist {
 //            }
 //        }
 //        return false;
+
+
+
+
+        Arrays.sort(arr);
+        for(int i=0; i<arr.length; i++) {
+            //positive number
+            if(arr[i] >= 0 && binarySearch(arr,i+1, arr.length-1, 2*arr[i]) )
+                return true;
+            //negative number
+            if( arr[i] < 0 && arr[i]%2 == 0 && binarySearch(arr, i+1, arr.length-1, arr[i]/2))
+                return true;
+        }
+        return false;
+    }
+
+
+    static boolean binarySearch(int[] arr, int s, int e, int target) {
+        //cout << s << " " << e << " " << target << endl;
+        int mid = s + (e-s)/2;
+        while(s <= e) {
+            //cout << "value of mid " << mid << " and target " << target << endl;
+            if(target == arr[mid])
+                return true;
+
+            if(arr[mid] > target)
+                e = mid - 1;
+            else
+                s = mid + 1;
+            mid = s + (e-s)/2;
+        }
+        return false;
     }
 
 }
