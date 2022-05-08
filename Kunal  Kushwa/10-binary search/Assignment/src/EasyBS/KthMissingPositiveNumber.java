@@ -2,7 +2,7 @@ package EasyBS;
 
 public class KthMissingPositiveNumber {
     public static void main(String[] args) {
-        int[] arr= {2,3,4,7,9};
+        int[] arr= {2,3,4,7,11};
         int k=5;
         System.out.println(findKthPositive(arr,k));
     }
@@ -51,7 +51,7 @@ public class KthMissingPositiveNumber {
         {
             int mid=lo+(hi-lo)/2;
             //arr[mid]-mid+1 == missing numbers up to mid
-            if((arr[mid]-mid+1)<k)
+            if(arr[mid]-(mid+1)<k)
             {
                 closeMid=mid+1;
                 lo=mid+1;
