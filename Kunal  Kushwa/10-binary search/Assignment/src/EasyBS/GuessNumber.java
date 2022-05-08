@@ -14,7 +14,7 @@ Return the number that I picked.
  */
 
 
-package AssignemnetBS;
+package EasyBS;
 
 public class GuessNumber {
     public static void main(String[] args) {

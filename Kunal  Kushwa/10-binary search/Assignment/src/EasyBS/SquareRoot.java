@@ -1,4 +1,4 @@
-package AssignemnetBS;
+package EasyBS;
 
 public class SquareRoot {
     public static void main(String[] args) {
