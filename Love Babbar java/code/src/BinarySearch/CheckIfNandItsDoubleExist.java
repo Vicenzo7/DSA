@@ -5,7 +5,7 @@ import java.util.HashSet;
 
 public class CheckIfNandItsDoubleExist {
     public static void main(String[] args) {
-        int[] arr = {-1,-2,-3};
+        int[] arr = {10,2,5,13};
 
 //        Arrays.sort(arr);
 //        int k=Arrays.binarySearch(arr,7);
@@ -16,7 +16,22 @@ public class CheckIfNandItsDoubleExist {
     private static boolean checkIfExist(int[] arr) {
         int n = arr.length;
 
+
+
+
         //brute force
+        Arrays.sort(arr);
+        for (int i = 0; i < n; i++) {
+            int sum = 2 * arr[i];
+            for (int j = i+1; j < n; j++) {
+                if (arr[j] == sum) {
+                    return true;
+                }
+            }
+        }
+        return false;
+
+//        brute force
 //        for (int i = 0; i < n; i++) {
 //            int sum = 2 * arr[i];
 //            for (int j = 0; j < n; j++) {
@@ -69,31 +84,30 @@ public class CheckIfNandItsDoubleExist {
 
 
 
-        Arrays.sort(arr);
-        for(int i=0; i<arr.length; i++) {
-            //positive number
-            if(arr[i] >= 0 && binarySearch(arr,i+1, arr.length-1, 2*arr[i]) )
-                return true;
-            //negative number
-            if( arr[i] < 0 && arr[i]%2 == 0 && binarySearch(arr, i+1, arr.length-1, arr[i]/2))
-                return true;
-        }
-        return false;
+//        Arrays.sort(arr);
+//        for(int i=0; i<arr.length; i++) {
+//            //positive number
+//            if(arr[i] >= 0 && binarySearch(arr,i+1, arr.length-1, 2*arr[i]) )
+//                return true;
+//            //negative number
+//            if( arr[i] < 0 && arr[i]%2 == 0 && binarySearch(arr, i+1, arr.length-1, arr[i]/2))
+//                return true;
+//        }
+//        return false;
     }
 
 
     static boolean binarySearch(int[] arr, int s, int e, int target) {
-        //cout << s << " " << e << " " << target << endl;
         int mid = s + (e-s)/2;
         while(s <= e) {
             //cout << "value of mid " << mid << " and target " << target << endl;
             if(target == arr[mid])
                 return true;
 
-            if(arr[mid] > target)
-                e = mid - 1;
+            if(arr[mid] < target)
+                s=mid+1;
             else
-                s = mid + 1;
+                e = mid - 1;
             mid = s + (e-s)/2;
         }
         return false;
