@@ -41,7 +41,7 @@ public class TwoSum2InputArrayIsSorted {
          * This question straightforward uses two-pointer algo , but we can also use binary search within it, just to remove unwanted part of array (using unwanted part eliminate technique)
          whenever eliminated condition hit ,else normally executing by two pointer algo , that is help to reduce the overall time complexity .
 
-         Basically binary search helps to removes that part of array which have element greater than target.
+         Basically binary search helps to remove that part of array which have element greater than target.
          and only left with element that are lesser than target, on which we apply two-pointer algo.
 
          Time - O(Logn) + O(N) = O(N)
