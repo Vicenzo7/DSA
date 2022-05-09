@@ -40,7 +40,7 @@ public class ArraySubsetOFAnotherArray {
 //        Arrays.sort(arr);
 //        int count=0;
 //        for (int i = 0; i < m; i++) {
-//            if(binarySeach( arr,arr2[i]))
+//            if(binarySearch( arr,arr2[i]))
 //            {
 //                count++;
 //            }
@@ -90,7 +90,7 @@ public class ArraySubsetOFAnotherArray {
 
     }
 
-//    private static boolean binarySeach(int[] arr, int ele) {
+//    private static boolean binarySearch(int[] arr, int ele) {
 //        int n = arr.length;
 //        int low=0,high=n-1;
 //
