@@ -30,6 +30,7 @@ public class IntersectionOfTwoArrays {
             if(set.contains(nums2[i]))
             {
                 list.add(nums2[i]);
+                //removing so we don't add duplicates in list
                 set.remove(nums2[i]);
             }
         }
