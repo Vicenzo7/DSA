@@ -10,7 +10,7 @@ package MediumBS;
  */
 public class SearchInRotatedSortedArrayII {
     public static void main(String[] args) {
-        int[] arr = {2,5,6,0,0,1,2};
+        int[] arr = {1,0,1,1,1};
         int target = 0;
         System.out.println(search(arr,target));
 
@@ -18,7 +18,7 @@ public class SearchInRotatedSortedArrayII {
 
     public static boolean search(int[] arr, int target) {
         int n=arr.length;
-        int pivot=pivotIndex(arr);
+        int pivot=pivotIndexWithDuplicates(arr);
         System.out.println(pivot);
 
         // if you did not find a pivot,it means the array is not rotated
@@ -43,36 +43,50 @@ public class SearchInRotatedSortedArrayII {
     }
 
 
-    //Function to find pivot index here pivot is the greatest element
-
-    static int  pivotIndex(int[] arr) {
+    //Function to find pivot index.Here pivot is the greatest element
+    //this will work for duplicates
+    static int  pivotIndexWithDuplicates(int[] arr) {
         int n = arr.length;
         int start = 0;
         int end = n - 1;
 
         while (start <= end) {
-            if(start>0 && arr[start]==arr[start+1])
-            {
-                start++;
-            }
-            if(end< n-1 && arr[end]==arr[end+1])
-            {
-                end--;
-            }
-
             int mid = start + (end - start) / 2;
 
             //4 cases
-            if(mid<end && arr[mid]>arr[mid+1])
+            if(mid<end && arr[mid]>arr[mid+1]) {
                 return mid;
-            if(mid>0 && arr[mid]<arr[mid-1])
-                return mid-1;
+            }
+            if(mid>0 && arr[mid]<arr[mid-1]) {
+                return mid - 1;
+            }
 
-            if(arr[mid]>=arr[start])
+            // if elements at start,mid,end are equal skip the duplicates
+            if(arr[mid]==arr[start] && arr[mid]==arr[end])
             {
+                //skip the duplicates
+                //NOTE: what if these elements at start and end were the pivots??
+                //check if start is pivot
+                if(arr[start]>arr[start+1])
+                {
+                    return start;
+                }
+                start++;
+
+                //check if end is our pivot
+                if(arr[end]<arr[end-1])
+                {
+                    return end-1;
+                }
+                end--;
+            }
+            //left side is sorted, so pivot should be in right
+            else if(arr[start]<arr[mid] || (arr[start]==arr[mid] &&arr[mid]>arr[end])){
                 start=mid+1;
-            }else
+            }
+            else{
                 end=mid-1;
+            }
         }
         return -1;
     }
