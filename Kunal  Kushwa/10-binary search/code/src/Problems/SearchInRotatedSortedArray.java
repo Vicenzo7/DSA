@@ -7,7 +7,7 @@
     3- according to that apply Binary Search
  */
 
-package MediumBS;
+package Problems;
 
 public class SearchInRotatedSortedArray {
     public static void main(String[] args) {
@@ -50,8 +50,7 @@ public class SearchInRotatedSortedArray {
     }
 
 
-    //Function to find pivot index here pivot is the largest element
-
+    //Function to find pivot index here pivot will be 6
     //this will not work for duplicates values
     static int pivotIndex(int[] arr) {
         int n = arr.length;
@@ -60,6 +59,7 @@ public class SearchInRotatedSortedArray {
 
         while (start <= end) {
             int mid = start + (end - start) / 2;
+
             //4 cases
             if(mid<end && arr[mid]>arr[mid+1])
                 return mid;
@@ -69,8 +69,49 @@ public class SearchInRotatedSortedArray {
             if(arr[mid]>=arr[start])
             {
                 start=mid+1;
-            }else
-                end=mid-1;
+            }else {
+                end = mid - 1;
+            }
+        }
+        return -1;
+    }
+
+
+    static int pivotIndexWithduplicates(int[] arr) {
+        int n = arr.length;
+        int start = 0;
+        int end = n - 1;
+
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+
+            //4 cases
+            if(mid<end && arr[mid]>arr[mid+1])
+                return mid;
+            if(mid>0 && arr[mid]<arr[mid-1])
+                return mid-1;
+
+            // if elements at middle,start,end are equal then just skip the duplicates
+            if(arr[mid]==arr[start] && arr[mid]==arr[end])
+            {
+                //skipp the duplicates
+                //NOTE: what if these elements at start and end were pivot??
+                //check if start is pivot
+                if(arr[start]>arr[start+1])
+                {
+                    return start;
+                }
+                start++;
+
+                //check if end is pivot
+                if(arr[end]<arr[end-1])
+                {
+                    return end -1;
+                }
+                end--;
+            }
+            //left side is sorted,so pivot should be in right
+            
         }
         return -1;
     }
@@ -78,26 +119,26 @@ public class SearchInRotatedSortedArray {
 
 
     //function for Binary Search
-    static int binarySearch(int [] arr,int start,int end,int target)
-    {
+     static int binarySearch(int [] arr,int start,int end,int target)
+     {
 
-        while(start<=end)
-        {
-            int mid = start + (end - start) / 2;
-            if(arr[mid]==target)
-            {
-                return mid;
-            }
-            else if(arr[mid]<target)
-            {
-                start= mid+1;
-            }
-            else{
-                end=mid-1;
-            }
-        }
-        return -1;
-    }
+          while(start<=end)
+          {
+              int mid = start + (end - start) / 2;
+              if(arr[mid]==target)
+              {
+                  return mid;
+              }
+              else if(arr[mid]<target)
+              {
+                  start= mid+1;
+              }
+              else{
+                  end=mid-1;
+              }
+          }
+          return -1;
+     }
 
 
 

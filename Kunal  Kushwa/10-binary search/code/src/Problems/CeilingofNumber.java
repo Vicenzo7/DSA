@@ -1,11 +1,10 @@
 package Problems;
 
-public class CeilingAndFloorOfANumber {
+public class CeilingofNumber {
     public static void main(String[] args) {
         int[] arr={2,3,5,9,14,16,18};
-        int target=15;
+        int target=19;
         System.out.println("Ceiling "+findCeiling(arr,target));
-        System.out.println("Floor "+findFloor(arr,target));
     }
 
 
@@ -13,7 +12,14 @@ public class CeilingAndFloorOfANumber {
      * finding ceiling of number
      * ceiling =the smallest number in array greater or = target
      */
+    //return the index: smallest number>=target
     private static int findCeiling(int[] arr, int target) {
+
+        //but what is the target is greater than the greatest number in the array
+        if(target>arr[arr.length-1])
+        {
+            return -1;
+        }
         int start =0;
         int end=arr.length-1;
         while(start<=end)
@@ -26,29 +32,9 @@ public class CeilingAndFloorOfANumber {
             else
                 end =mid-1;
         }
-        return arr[start];
+        return start;
     }
 
 
-    /**
-     *
-     *finding floor of number
-     * floor=the greatest number smaller or = target
-     */
 
-    private static int findFloor(int[] arr, int target) {
-        int start =0;
-        int end=arr.length-1;
-        while(start<=end)
-        {
-            int mid=start+(end-start)/2;
-            if(arr[mid]==target)
-                return arr[mid];
-            else if(arr[mid]<target)
-                start=mid+1;
-            else
-                end =mid-1;
-        }
-        return arr[end];
-    }
 }

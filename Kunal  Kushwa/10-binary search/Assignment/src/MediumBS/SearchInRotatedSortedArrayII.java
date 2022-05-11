@@ -10,73 +10,78 @@ package MediumBS;
  */
 public class SearchInRotatedSortedArrayII {
     public static void main(String[] args) {
-        int[] arr = {2,2,2,3,2,2,2};
-        int target = 3;
+        int[] arr = {2,5,6,0,0,1,2};
+        int target = 0;
         System.out.println(search(arr,target));
 
     }
 
-    public static boolean search(int[] arr,int target) {
+    public static boolean search(int[] arr, int target) {
         int n=arr.length;
         int pivot=pivotIndex(arr);
         System.out.println(pivot);
-        if(arr[pivot]<= target && target<=arr[n-1])
+
+        // if you did not find a pivot,it means the array is not rotated
+        if(pivot==-1){
+            //just do normal Binary search
+            return  binarySearch(arr,0, n-1,target);
+        }
+
+
+        //if pivot is found we have two ascending sorted arrays
+        if(arr[pivot]==target)
+            return true;
+
+
+        if(arr[0]<= target && target<arr[pivot])
         {
             //Apply BS to second line
-            return binarySearch(arr,pivot,n-1,target);
-        }else{
             return binarySearch(arr,0,pivot-1,target);
+        }else{
+            return binarySearch(arr,pivot+1,n-1,target);
         }
     }
 
-    static int pivotIndex(int[] arr) {
-//        int n = arr.length;
-//        int start = 0;
-//        int end = n - 1;
-//
-//        while (start < end) {
-//            int mid = start + (end - start) / 2;
-//            if (arr[mid] >= arr[0]) {
-//                start = mid+1 ;
-//            } else {
-//                end = mid;
-//            }
-//        }
-//        return start;// we can return end also
 
+    //Function to find pivot index here pivot is the greatest element
 
+    static int  pivotIndex(int[] arr) {
         int n = arr.length;
         int start = 0;
         int end = n - 1;
 
-        while (start < end) {
+        while (start <= end) {
+            if(start>0 && arr[start]==arr[start+1])
+            {
+                start++;
+            }
+            if(end< n-1 && arr[end]==arr[end+1])
+            {
+                end--;
+            }
+
             int mid = start + (end - start) / 2;
-            //if mid is greater than mid+1(next of mid) than mid is pivot
-            if (mid<end && arr[mid]>arr[mid+1]) {
+
+            //4 cases
+            if(mid<end && arr[mid]>arr[mid+1])
                 return mid;
-            }
-            //if mid is less than mid-1(previous of mid) than mid is pivot
-            if (mid>0 && arr[mid]<arr[mid-1]) {
+            if(mid>0 && arr[mid]<arr[mid-1])
                 return mid-1;
-            }
 
             if(arr[mid]>=arr[start])
             {
                 start=mid+1;
-            }
-            else{
+            }else
                 end=mid-1;
-            }
-
         }
-        return start;
+        return -1;
     }
 
+
     //function for Binary Search
-    static boolean binarySearch(int [] arr,int s,int e,int target)
+    static boolean binarySearch(int [] arr,int start,int end,int target)
     {
-        int start=s;
-        int end=e;
+        int n= arr.length;
         while(start<=end)
         {
             int mid = start + (end - start) / 2;
@@ -84,7 +89,7 @@ public class SearchInRotatedSortedArrayII {
             {
                 return true;
             }
-            else if(arr[mid]<=target)
+            else if(arr[mid]<target)
             {
                 start= mid+1;
             }
@@ -94,4 +99,5 @@ public class SearchInRotatedSortedArrayII {
         }
         return false;
     }
+
 }

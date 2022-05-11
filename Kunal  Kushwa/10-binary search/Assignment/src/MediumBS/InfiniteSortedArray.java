@@ -1,4 +1,4 @@
-package BinarySearch;
+package MediumBS;
 
 /*
 Search element in infinite sorted array
