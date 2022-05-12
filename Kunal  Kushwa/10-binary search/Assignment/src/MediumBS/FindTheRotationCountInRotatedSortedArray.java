@@ -20,6 +20,8 @@ public class FindTheRotationCountInRotatedSortedArray {
         if (arr[start] < arr[end]) {
             return 0;
         }
+
+        //we are finding minimum pivot so we are returning smaller index
         while (start <= end) {
             int mid = start + (end - start) / 2;
             if (mid < end && arr[mid] > arr[mid + 1]) {
