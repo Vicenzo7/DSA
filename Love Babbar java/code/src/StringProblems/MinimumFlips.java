@@ -1,4 +1,4 @@
-package Letter;
+package StringProblems;
 
 public class MinimumFlips {
     public static void main(String[] args) {

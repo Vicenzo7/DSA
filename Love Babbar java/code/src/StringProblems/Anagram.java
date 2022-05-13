@@ -1,4 +1,4 @@
-package Letter;
+package StringProblems;
 
 import java.util.*;
 
