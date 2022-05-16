@@ -3,7 +3,7 @@ package StringProblems;
 //https://leetcode.com/problems/reverse-words-in-a-string/
 public class ReverseWordsInAString {
     public static void main(String[] args) {
-        String str ="the sky is blue";
+        String str ="The Sky is Blue";
         String ans=reverseWords(str);
         System.out.println(ans);
     }
@@ -21,6 +21,11 @@ public class ReverseWordsInAString {
                 sb.append(st);
             }
         }
+
+        StringBuilder sa = new StringBuilder(sb);
+        sa.reverse();
+        System.out.println(sa.toString());
         return sb.toString();
     }
+
 }

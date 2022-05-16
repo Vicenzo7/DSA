@@ -2,7 +2,7 @@ package StringProblems;
 
 public class MinimumFlips {
     public static void main(String[] args) {
-        String str="0010";
+        String str="01001001101";
         int ans0=countFlips(str,'0');
         System.out.println(ans0);
         int ans1=countFlips(str,'1');
