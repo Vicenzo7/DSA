@@ -21,6 +21,8 @@ public class ReverseWordsInAString {
                 sb.append(st);
             }
         }
+        StringBuilder sa = new StringBuilder(sb);
+        System.out.println(sa.reverse());
         return sb.toString();
     }
 }

@@ -50,6 +50,7 @@ public class FindTheDuplicateNumber {
 
 
     public static int findDuplicateUsingFlyodTortoiseandHare(int[] nums) {
+
         int slow=nums[0];
         int fast=nums[0];
         do{
