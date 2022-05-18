@@ -5,8 +5,8 @@ import java.util.Arrays;
 
 public class Eko {
     public static void main(String[] args) {
-        int [] arr={15,8,18,6};
-        int target=30;
+        int [] arr={4, 42, 40, 26, 46};
+        int target=20;
 
         int maxHeight=getMaxHeightOfSaw(arr,target);
         System.out.println(maxHeight);
@@ -41,17 +41,29 @@ public class Eko {
 
     private static boolean isPossibleSolution(int mid, int[] arr, int target) {
         int sum=0;
-        for (int i = 0; i <arr.length ; i++) {
-            int diff=0;
-            if(arr[i]>mid)
-            {
-                diff=arr[i]-mid;
-            }
-            sum +=diff;
-        }
-        if(sum>=target)
+//        for (int i = 0; i <arr.length ; i++) {
+//            int diff=0;
+//            if(arr[i]>mid)
+//            {
+//                diff=arr[i]-mid;
+//            }
+//            sum +=diff;
+//        }
+//        if(sum>=target)
+//        {
+//            return true;
+//        }
+
+        for(int x:arr)
         {
-            return true;
+            if(x>mid)
+            {
+                sum= sum+x-mid;
+                if(sum>=target)
+                {
+                    return true;
+                }
+            }
         }
         return false;
     }

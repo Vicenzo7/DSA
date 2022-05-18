@@ -6,6 +6,7 @@ public class SplitArrayLargestSum {
         int[] nums={7,2,5,10,8};
         int m=2;
         System.out.println(splitArray(nums,m));
+        System.out.println(splitArrayLoveBabar(nums,m));
     }
 
     public static int splitArray(int[] nums, int m) {
@@ -45,5 +46,63 @@ public class SplitArrayLargestSum {
         }
 
         return end;//here start==end
+    }
+
+
+
+    //Love Babbar method
+    public static int splitArrayLoveBabar(int[] nums, int m) {
+        int start=0;
+        int end=0;
+
+        //storing in start max of array and in end the sum of entire array
+        for(int i=0;i<nums.length;i++)
+        {
+            start= Math.max(start,nums[i]);
+            end += nums[i];
+        }
+        int ans=-1;
+
+        while(start<=end)
+        {
+            int mid=start + (end-start)/2;
+
+            if(isPossible(nums,m,mid))
+            {
+                ans= mid;
+                end= mid-1;
+            }
+            else{
+                start = mid+1;
+            }
+
+        }
+        return ans;
+    }
+
+
+
+    public static boolean isPossible(int[] nums,int m, int mid)
+    {
+        int sum=0;
+        int pieces=1;
+
+        for(int num:nums)
+        {
+            if(sum+num<=mid)
+            {
+                sum +=num;
+
+            }else{
+                pieces++;
+                if(pieces>m || num >mid)
+                {
+                    return false;
+                }
+                sum = num;
+            }
+        }
+
+        return true;
     }
 }

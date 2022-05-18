@@ -1,16 +1,13 @@
-package HardBS;
+package BinarySearchSearchSpaceReduction;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class BookAllocation {
     public static void main(String[] args) {
         ArrayList<Integer> arr =new ArrayList<>();
-        arr.add(10);
-        arr.add(20);
-        arr.add(30);
-        arr.add(40);
-        int m=2;
+        arr.add(3);
+
+        int m=1;
 
         System.out.println(allocateBooks(arr,1,m));
     }
