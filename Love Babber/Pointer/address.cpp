@@ -96,11 +96,12 @@ int main()
     // }
 
 
-    // char sentence [] = "My name is babbar";
-    // char *p = sentence;
-    // cout << p  << endl;
-    // cout << *p << endl;
-    // cout << &p << endl;
+    char sentence [] = "My name is babbar";
+    char *p = sentence;
+    cout << p  << endl;
+    cout << *p << endl;
+    cout << &p << endl;
+    cout << &p[0]  << endl;
 
 
 
