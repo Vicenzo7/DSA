@@ -19,7 +19,6 @@ int main()
     int a = 5;
     int *p = &a;
     int **q = &p;
-    int ***r = &q;
 
     // cout << &a << endl;
     // cout << a << endl;
@@ -39,35 +38,35 @@ int main()
 
     // cout<< "All good" << endl; 
 
-    // cout << "before " << q << endl;
-    // cout << "before " << *q << endl;
-    // cout << "before " << **q << endl;
+    cout << "before " << q << endl;
+    cout << "before " << *q << endl;
+    cout << "before " << **q << endl;
 
-    // func1(q);
+    func1(q);
 
-    // cout << "after " << q << endl;
-    // cout << "after " << *q << endl;
-    // cout << "after " << **q << endl;
+    cout << "after " << q << endl;
+    cout << "after " << *q << endl;
+    cout << "after " << **q << endl;
 
-    // cout << "before " << q << endl;
-    // cout << "before " << *q << endl;
-    // cout << "before " << **q << endl;
+    cout << "before " << q << endl;
+    cout << "before " << *q << endl;
+    cout << "before " << **q << endl;
 
-    // func2(q);
+    func2(q);
 
-    // cout << "after " << q << endl;
-    // cout << "after " << *q << endl;
-    // cout << "after " << **q << endl;
+    cout << "after " << q << endl;
+    cout << "after " << *q << endl;
+    cout << "after " << **q << endl;
 
-    // cout << "before " << q << endl;
-    // cout << "before " << *q << endl;
-    // cout << "before " << **q << endl;
+    cout << "before " << q << endl;
+    cout << "before " << *q << endl;
+    cout << "before " << **q << endl;
 
-    // func3(q);
+    func3(q);
 
-    // cout << "after " << q << endl;
-    // cout << "after " << *q << endl;
-    // cout << "after " << **q << endl;
+    cout << "after " << q << endl;
+    cout << "after " << *q << endl;
+    cout << "after " << **q << endl;
 
 
     // int arr[] ={1,2,3};
