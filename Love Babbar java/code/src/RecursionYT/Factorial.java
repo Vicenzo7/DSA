@@ -15,7 +15,7 @@ public class Factorial {
 
     private static int fact(int n) {
         //base condition
-        if( n == 0)
+        if( n == 0 || n==1)
             return 1;
 
 //        int smallProblem =fact(n-1);

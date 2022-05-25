@@ -28,6 +28,7 @@ public class FastExponentiation {
             }
 
             x =x*x;
+
             //dividing by 2
             n=n>>1;
         }
@@ -59,7 +60,7 @@ public class FastExponentiation {
         }
 
         if(n<0)
-            return (double)1/(double)ans;
+            return (double)1/ ans;
 
         return ans;
 
