@@ -73,6 +73,7 @@ public class FindSmallestLetterGreaterThanTarget {
                 end=mid;
             }
         }
+        System.out.println(start);
 
         return letters[start]>target ? letters[start]:letters[0];
     }
