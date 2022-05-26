@@ -1,13 +1,18 @@
-package Problems;
-//https://leetcode.com/problems/find-the-duplicate-number/
-class FindDuplicate {
+package CycleSortProblems;
+//https://leetcode.com/problems/set-mismatch/
+import java.util.Arrays;
+
+class SetMismatch {
+
     public static void main(String[] args) {
-        int[] nums= {1,3,4,2,2};
-        System.out.println(findDuplicate(nums));
+        int[] nums= {1,2,2,4};
+        System.out.println(Arrays.toString(findErrorNums(nums)));
     }
 
-    public static  int findDuplicate(int[] nums) {
-        //apply cycle sort
+
+
+    public static int[] findErrorNums(int[] nums) {
+      
         int i=0;
         while(i<nums.length)
         {
@@ -23,14 +28,15 @@ class FindDuplicate {
             }
         }
         
-        // search for duplicate numbers in  the array
+        // search for disappeared  numbers in the array
         for(int index=0;index<nums.length;index++)
         {
             if(nums[index]!= index+1)
             {
-                return nums[index];
+                return new int[]{nums[index],index+1};
             }
         }
-        return -1;
+        return new int[]{-1,-1};
+    
     }
 }

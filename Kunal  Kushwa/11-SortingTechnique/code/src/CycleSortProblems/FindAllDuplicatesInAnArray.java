@@ -1,18 +1,15 @@
-package Problems;
-//https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
+package CycleSortProblems;
+//https://leetcode.com/problems/find-all-duplicates-in-an-array/
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-class FindDisappearedNumber {
+class FindAllDuplicatesInAnArray {
 
     public static void main(String[] args) {
         int[] nums={4,3,2,7,8,2,3,1};
-        System.out.println(findDisappearedNumbers(nums));
+        System.out.println(findDuplicates(nums));
     }
-
-
-    public static List<Integer> findDisappearedNumbers(int[] nums) {
+    public static List<Integer> findDuplicates(int[] nums) {
         List<Integer> ans = new ArrayList<>();
         int i=0;
         while(i<nums.length)
@@ -28,16 +25,17 @@ class FindDisappearedNumber {
                 i++;
             }
         }
-        System.out.println(Arrays.toString(nums));
-        
-        // search for disappeared  numbers in the array
+
+        // search for dissapeared numbers int the array
         for(int index=0;index<nums.length;index++)
         {
             if(nums[index]!= index+1)
             {
-                ans.add(index+1);
+                ans.add(nums[index]);
             }
         }
+
+
         return ans;
     }
 }

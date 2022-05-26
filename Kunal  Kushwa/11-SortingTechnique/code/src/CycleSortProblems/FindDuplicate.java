@@ -1,16 +1,13 @@
-package Problems;
-//https://leetcode.com/problems/find-all-duplicates-in-an-array/
-import java.util.ArrayList;
-import java.util.List;
-
-class FindAllDuplicatesInAnArray {
-
+package CycleSortProblems;
+//https://leetcode.com/problems/find-the-duplicate-number/
+class FindDuplicate {
     public static void main(String[] args) {
-        int[] nums={4,3,2,7,8,2,3,1};
-        System.out.println(findDuplicates(nums));
+        int[] nums= {1,3,4,2,2};
+        System.out.println(findDuplicate(nums));
     }
-    public static List<Integer> findDuplicates(int[] nums) {
-        List<Integer> ans = new ArrayList<>();
+
+    public static  int findDuplicate(int[] nums) {
+        //apply cycle sort
         int i=0;
         while(i<nums.length)
         {
@@ -25,17 +22,15 @@ class FindAllDuplicatesInAnArray {
                 i++;
             }
         }
-
-        // search for dissapeared numbers int the array
+        
+        // search for duplicate numbers in  the array
         for(int index=0;index<nums.length;index++)
         {
             if(nums[index]!= index+1)
             {
-                ans.add(nums[index]);
+                return nums[index];
             }
         }
-
-
-        return ans;
+        return -1;
     }
 }
