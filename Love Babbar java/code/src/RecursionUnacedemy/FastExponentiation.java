@@ -12,14 +12,18 @@ public class FastExponentiation {
         {
          return 1;
         }
+
+        //recursive call
         int smallP= expo(a,b/2);
 
+        //if b is odd
         if((b&1) == 1)
         {
             return smallP * smallP * a;
         }
         else
         {
+            //if b is even
             return smallP*smallP;
         }
     }
