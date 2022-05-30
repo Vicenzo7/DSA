@@ -1,0 +1,36 @@
+package StringProblems;
+
+public class ValidPalindrome2 {
+    public static void main(String[] args) {
+        String str = "abccbxa";
+        System.out.println(validPalindrome(str));
+    }
+
+    public static boolean validPalindrome(String s) {
+
+        int start = 0, end = s.length() - 1;
+        while (start < end) {
+            if (s.charAt(start) != s.charAt(end)) {
+                return checkPalindrome(s, start + 1, end) || checkPalindrome(s, start, end - 1);
+            }
+            start++;
+            end--;
+        }
+
+        return true;
+    }
+
+    public static boolean checkPalindrome(String s, int start, int end) {
+
+
+        while (start < end) {
+            if (s.charAt(start) != s.charAt(end)) {
+                return false;
+            }
+            start++;
+            end--;
+        }
+
+        return true;
+    }
+}
