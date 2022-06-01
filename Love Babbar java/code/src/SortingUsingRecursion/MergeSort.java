@@ -39,14 +39,14 @@ public class MergeSort {
 
         //copying values
         int mainArrayIndex = start;
-//        for (int i = 0; i < len1; i++) {
-//            first[i] = arr[mainArrayIndex++];
-//        }
-//
-//        mainArrayIndex = mid + 1;
-//        for (int i = 0; i < len2; i++) {
-//            second[i] = arr[mainArrayIndex++];
-//        }
+        for (int i = 0; i < len1; i++) {
+            first[i] = arr[mainArrayIndex++];
+        }
+
+        mainArrayIndex = mid + 1;
+        for (int i = 0; i < len2; i++) {
+            second[i] = arr[mainArrayIndex++];
+        }
 
         //merger two sorted Arrays
         int index1 = 0;
