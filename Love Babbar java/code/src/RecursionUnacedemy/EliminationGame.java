@@ -1,7 +1,5 @@
 package RecursionUnacedemy;
 
-import java.util.ArrayList;
-
 public class EliminationGame {
     public static void main(String[] args) {
         int n =9;
