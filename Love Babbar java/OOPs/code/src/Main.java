@@ -1,4 +1,4 @@
-public class Human {
+ class Human {
 
     private char gender;
     private int age;
@@ -42,7 +42,7 @@ public class Human {
     }
 }
 
-class Main{
+public class Main{
     public static void main(String[] args) {
 
         Human obj = new Human(23,'f');
