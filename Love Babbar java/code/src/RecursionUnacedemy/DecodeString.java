@@ -30,7 +30,9 @@ public class DecodeString {
                 // add this string cur number of times
                 while(cur >0)
                 {
+                    System.out.println(cur);
                     sb.append(st);
+                    System.out.println(sb);
                     cur --;
                 }
                 cur=0;
