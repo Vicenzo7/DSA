@@ -1,11 +1,12 @@
 package Problems;
 
-public class SingleLL {
+public class MiddleOfLL {
+
 
     public Node head;
     public Node tail;
     public int size;
-    public SingleLL() {
+    public MiddleOfLL() {
         this.size =0;
     }
 
@@ -57,30 +58,6 @@ public class SingleLL {
         System.out.println("END");
     }
 
-    // reverse a linked list
-    public Node reverseList(Node head) {
-
-        if(head == null)
-        {
-            return head;
-        }
-        Node curr = head;
-        Node prev = null;
-
-
-        while(curr != null)
-        {
-            Node next = curr.next;
-            curr.next = prev;
-
-            prev = curr;
-            curr = next;
-        }
-
-
-        return prev;
-
-    }
 
     // to get middle element
     public Node middleNode(Node head) {
@@ -106,70 +83,6 @@ public class SingleLL {
     }
 
 
-    // to check is linked list is Circular
-    public boolean hasCycle(Node head) {
-
-
-        Node slow = head;
-        Node fast = head;
-
-        // till we reach last  and also checking if its possible to move forward
-        while(fast != null && fast.next != null)
-        {
-            //moving fast by 2
-            fast = fast.next.next;
-            //moving slow by 2
-            slow = slow.next;
-            if(slow == fast)
-                return true;
-        }
-
-        return false;
-
-    }
-
-
-    //Reverse LL in K groups
-    public Node reverseKGroup(Node head, int k) {
-        // if LL empty
-        if(head == null)
-            return null;
-
-        int count = 0;
-        Node temp = head;
-        // checking if there are k elements to reverse
-        while(temp!=null && count<k) {
-            temp = temp.next;
-            count++;
-        }
-
-        if(count < k)
-            return head;
-
-        // reversing if k elements are there
-        Node curr = head;
-        Node prev = null;
-        Node next = null;
-        count =0;
-        // reverse the list till first k
-        while(curr != null && count < k)
-        {
-            next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr  = next;
-            count++;
-        }
-
-        if(next != null)
-        {
-            Node rem = reverseKGroup(next,k);
-            head.next = rem;
-        }
-
-        return prev;
-    }
-
 
     public class Node{
         public int value;
@@ -186,7 +99,20 @@ public class SingleLL {
     }
 
 
+    public static void main(String[] args) {
+        MiddleOfLL list = new MiddleOfLL();
+
+        list.insertLast(1);
+        list.insertLast(2);
+        list.insertLast(3);
+        list.insertLast(4);
+        list.insertLast(5);
+        list.insertLast(6);
+        list.insertLast(7);
 
 
 
+         //middle element of LL02
+        list.display2(list.middleNode(list.head));
+    }
 }
