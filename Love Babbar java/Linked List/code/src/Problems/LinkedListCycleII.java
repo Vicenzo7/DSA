@@ -1,12 +1,11 @@
 package Problems;
 
-public class DetectandDeleteLoopInLL {
-
+public class LinkedListCycleII {
     public Node head;
     public Node tail;
     public int size;
 
-    public DetectandDeleteLoopInLL() {
+    public LinkedListCycleII() {
         this.size = 0;
     }
 
@@ -58,17 +57,27 @@ public class DetectandDeleteLoopInLL {
         System.out.println("END");
     }
 
-    //to detect loop
-    public Node detect(Node head) {
+    //display function to display single node
+    public void display3(Node head) {
+        Node temp = head;
+        System.out.println(temp.value);
+    }
 
+
+    public Node detectCycle(Node head) {
+        return detectandDelete(head);
+    }
+
+    public Node detect(Node head){
         Node slow = head;
         Node fast = head;
 
-        while (fast != null && fast.next != null) {
+        while(fast != null && fast.next != null)
+        {
             slow = slow.next;
-            fast= fast.next.next;
+            fast = fast.next.next;
 
-            if(slow == fast)
+            if(slow== fast)
                 return slow;
         }
 
@@ -76,40 +85,24 @@ public class DetectandDeleteLoopInLL {
     }
 
 
-    // to detect and delete loop
-    public void detectAndDeleteLoop(Node head)
-    {
+    public Node detectandDelete(Node head){
+
         if(head == null)
-        {
-            System.out.println("List empty");
-
-        }
-
+            return null;
         Node slow = detect(head);
         if(slow == null)
-        {
-            System.out.println("No loop present");
-
-        }else{
-            System.out.println("loop present");
-        }
-
+            return null;
         Node fast = head;
+
         while(slow != fast)
         {
             slow = slow.next;
-            fast= fast.next;
+            fast = fast.next;
         }
 
-        // now slow and fast are at our beginning node
-        Node beginningNode = slow;
 
-        while(beginningNode.next != slow)
-        {
-            beginningNode=beginningNode.next;
-        }
-        beginningNode.next = null;
-        
+        return slow;
+
     }
 
 
@@ -129,7 +122,7 @@ public class DetectandDeleteLoopInLL {
 
 
     public static void main(String[] args) {
-        DetectandDeleteLoopInLL list = new DetectandDeleteLoopInLL();
+        LinkedListCycleII list = new LinkedListCycleII();
 
         list.insertLast(1);
         list.insertLast(2);
@@ -144,9 +137,6 @@ public class DetectandDeleteLoopInLL {
         list.insertLast(10);
         list.tail.next = temp;
 
-//        list.display();
-
-        list.detectAndDeleteLoop(list.head);
-        list.display();
+        list.display3(list.detectCycle(list.head));
     }
 }
