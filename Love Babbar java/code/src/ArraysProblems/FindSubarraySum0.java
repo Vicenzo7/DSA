@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 public class FindSubarraySum0 {
     public static void main(String[] args) {
-        int[] arr = {4, 2,0 ,1, 6};
+        int[] arr = {4, 2,-1 ,1, 6};
         System.out.println(findSum(arr));
     }
 
