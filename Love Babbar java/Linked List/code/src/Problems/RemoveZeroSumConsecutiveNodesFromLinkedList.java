@@ -1,6 +1,7 @@
 package Problems;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 //https://leetcode.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/
 public class RemoveZeroSumConsecutiveNodesFromLinkedList {
@@ -67,7 +68,40 @@ public class RemoveZeroSumConsecutiveNodesFromLinkedList {
 
     public Node removeZeroSumSublists(Node head) {
 
+        HashMap<Integer, Node> map = new HashMap<>();
 
+        Node dummyPreHead = new Node(0);
+        dummyPreHead.next = head;
+        map.put(0,dummyPreHead);
+
+        Node curr = head;
+        int sum =0;
+
+        while(curr != null)
+        {
+            sum += curr.value;
+            if(map.containsKey(sum))
+            {
+                Node oldNodeWithSameSum = map.get(sum);
+
+                Node toBeRemovedNode = oldNodeWithSameSum.next;
+                int removeSum = sum;
+                while(toBeRemovedNode != curr)
+                {
+                    removeSum = removeSum + toBeRemovedNode.value;
+                    map.remove(removeSum);
+                    toBeRemovedNode = toBeRemovedNode.next;
+                }
+
+                oldNodeWithSameSum.next = curr.next;
+            }else{
+                map.put(sum,curr);
+            }
+
+            curr=curr.next;
+        }
+
+        return dummyPreHead.next;
     }
 
 
@@ -98,6 +132,8 @@ public class RemoveZeroSumConsecutiveNodesFromLinkedList {
         list.insertLast(5);
         list.insertLast(-5);
         list.insertLast(1);
+
+        list.display2(list.removeZeroSumSublists(list.head));
 
 
     }
