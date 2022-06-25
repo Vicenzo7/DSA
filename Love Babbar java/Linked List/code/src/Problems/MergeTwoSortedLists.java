@@ -1,7 +1,5 @@
 package Problems;
 
-import com.company.Main;
-
 public class MergeTwoSortedLists {
     public Node head;
     public Node tail;
