@@ -37,7 +37,7 @@ public class ReverseAStack {
 
         insertAtBottom(stack,topElement);
     }
-    
+
 
 
     public static void main(String[] args) {
