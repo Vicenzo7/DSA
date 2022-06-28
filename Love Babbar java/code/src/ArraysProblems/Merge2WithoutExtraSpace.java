@@ -1,7 +1,6 @@
 //https://practice.geeksforgeeks.org/problems/merge-two-sorted-arrays5135/1
 package ArraysProblems;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Merge2WithoutExtraSpace {
@@ -9,101 +8,33 @@ public class Merge2WithoutExtraSpace {
         int[] arr1={1, 3, 5, 7};
         int[] arr2= {0, 2, 6, 8, 9};
 
-        merge(arr1,arr2);
+        merge(arr1,arr2, arr1.length, arr2.length);
+        System.out.println(Arrays.toString(arr1));
+        System.out.println(Arrays.toString(arr2));
     }
 
-    private static void merge(int[] arr1, int[] arr2) {
-
-        int n=arr1.length;
-        int m=arr2.length;
-//        for (int i = 0; i < n; i++) {
-//            for (int j = 0; j <m ; j++) {
-//                if(arr1[i] >arr2[j])
-//                {
-//                    int temp=arr1[i];
-//                    arr1[i] =arr2[j];
-//                    arr2[j]=temp;
-//                }
-//            }
-//        }
-//        Arrays.sort(arr2);
-
-
-
-        //approach1
-        //take a new array
-//        int[] arr3 = new int[n+m];
-//
-//        int i=0,j=0,k=0;
-//        //insert element of array 1 and array 2 into array 3
-//        while(j<n)
-//        {
-//            arr3[i]=arr1[j];
-//            j++;
-//            i++;
-//        }
-//        while(k<m)
-//        {
-//            arr3[i]=arr2[k];
-//            k++;
-//            i++;
-//        }
-//        //sort array 3
-//        Arrays.sort(arr3);
-//        //put the array 3 elements in array1 and array 2
-//        j=0;
-//        i=0;
-//        while(j<n)
-//        {
-//            arr1[j]=arr3[i];
-//            i++;
-//            j++;
-//        }
-//        k=0;
-//        while(k<m)
-//        {
-//            arr2[k]=arr3[i];
-//            i++;
-//            k++;
-//        }
-
-
-
-
-        //insertion algo
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j <m ; j++) {
-                if(arr1[i] >arr2[j])
-                {
-                    int temp=arr1[i];
-                    arr1[i] =arr2[j];
-                    arr2[j]=temp;
-                }
-                //checking if array 2 is sorted if not we sort it;
-                for(int k=0;k<m-1;k++)
-                {
-                    if(arr2[k]>arr2[k+1])
-                    {
-                        int temp=arr2[k];
-                        arr2[k]=arr2[k+1];
-                        arr2[k+1]=temp;
-                    }
-                }
+    static void merge(int[] arr1, int arr2[], int n, int m) {
+        // code here
+        int i, k;
+        for (i = 0; i < n; i++) {
+            // take first element from arr1
+            // compare it with first element of second array
+            // if condition match, then swap
+            if (arr1[i] > arr2[0]) {
+                int temp = arr1[i];
+                arr1[i] = arr2[0];
+                arr2[0] = temp;
             }
-        }
 
-
-
-
-
-        for (int a:arr1)
-        {
-            System.out.print(a+" ");
-        }
-        System.out.println();
-        for (int a:arr2)
-        {
-            System.out.print(a+" ");
+            // then sort the second array
+            // put the element in its correct position
+            // so that next cycle can swap elements correctly
+            int first = arr2[0];
+            // insertion sort is used here
+            for (k = 1; k < m && arr2[k] < first; k++) {
+                arr2[k - 1] = arr2[k];
+            }
+            arr2[k - 1] = first;
         }
     }
 }
