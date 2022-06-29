@@ -18,7 +18,7 @@ public class RedundantBrackets {
         for(int i =0;i<s.length();i++){
             char ch = s.charAt(i);
 
-            //if anything come's except closing bracket just push it
+            //if anything comes except closing bracket just push it
             if(ch == '(' || ch == '+'|| ch == '-' || ch == '*' || ch == '/')
             {
                 stack.push(ch);
