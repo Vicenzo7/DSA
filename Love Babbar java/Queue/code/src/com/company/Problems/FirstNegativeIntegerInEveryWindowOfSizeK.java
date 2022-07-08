@@ -1,4 +1,4 @@
-package Problems;
+package com.company.Problems;
 
 import java.util.ArrayList;
 import java.util.Arrays;

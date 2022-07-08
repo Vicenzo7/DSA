@@ -1,4 +1,4 @@
-package Problems;
+package com.company.Problems;
 
 import java.util.LinkedList;
 import java.util.Queue;
