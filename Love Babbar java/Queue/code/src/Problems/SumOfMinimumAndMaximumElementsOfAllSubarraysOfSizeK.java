@@ -1,4 +1,4 @@
-package com.company.Problems;
+package Problems;
 //https://www.codingninjas.com/codestudio/problems/sum-of-minimum-and-maximum-elements-of-all-subarrays-of-size-k_1171047?leftPanelTab=1p
 
 import java.util.Deque;
