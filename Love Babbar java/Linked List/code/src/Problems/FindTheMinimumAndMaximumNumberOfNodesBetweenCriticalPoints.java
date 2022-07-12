@@ -151,15 +151,14 @@ public class FindTheMinimumAndMaximumNumberOfNodesBetweenCriticalPoints {
     public static void main(String[] args) {
         FindTheMinimumAndMaximumNumberOfNodesBetweenCriticalPoints list = new FindTheMinimumAndMaximumNumberOfNodesBetweenCriticalPoints();
 
+        list.insertLast(5);
+        list.insertLast(3);
         list.insertLast(1);
-        list.insertLast(3);
         list.insertLast(2);
+        list.insertLast(5);
+        list.insertLast(1);
         list.insertLast(2);
-        list.insertLast(3);
-        list.insertLast(2);
-        list.insertLast(2);
-        list.insertLast(2);
-        list.insertLast(7);
+
 
         System.out.println(Arrays.toString(list.nodesBetweenCriticalPoints(list.head)));
 
