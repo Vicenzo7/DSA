@@ -1,4 +1,4 @@
-package com.company;
+package Problems;
 
 import java.util.Arrays;
 import java.util.Stack;
