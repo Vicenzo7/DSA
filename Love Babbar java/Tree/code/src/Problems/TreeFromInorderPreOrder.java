@@ -1,8 +1,7 @@
 package Problems;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+import javax.swing.tree.TreeNode;
+import java.util.*;
 
 public class TreeFromInorderPreOrder {
     Scanner sc = new Scanner(System.in);
@@ -54,31 +53,69 @@ public class TreeFromInorderPreOrder {
         }
     }
 
-    int position(int[] inorder,int key,int s,int e)
-    {
-        for (int i = s; i <=e ; i++) {
-            if (inorder[i]==key)
-                return i;
+//    int position(int[] inorder,int key,int s,int e)
+//    {
+//        for (int i = s; i <=e ; i++) {
+//            if (inorder[i]==key)
+//                return i;
+//        }
+//        return -1;
+//    }
+//    static int preOrderIndex =0;
+//    Node buildFromInorderPreorder(int[] inorder,int[] preorder,int inStart,int inEnd)
+//    {
+//        //Base Case
+//        if(preOrderIndex >= preorder.length || inStart > inEnd)
+//            return null;
+//
+//        int element = preorder[preOrderIndex++];
+//        Node root = new Node(element);
+//
+//        //search element in inorder array
+//        int pos = position(inorder,element,inStart,inEnd);
+//
+//        root.left = buildFromInorderPreorder(inorder,preorder,inStart,pos-1);
+//        root.right = buildFromInorderPreorder(inorder,preorder,pos+1,inEnd);
+//        return root;
+//
+//    }
+
+
+
+    //optimised we used map to store in order index;
+
+    static int preorderIndex = 0;
+    static Map<Integer,Integer> inorderIndexMap;
+    public Node buildTree(int[] preorder, int[] inorder) {
+
+        // build a hashmap to store value -> its index relations
+        inorderIndexMap = new HashMap<>();
+        for(int i=0;i<inorder.length;i++)
+        {
+            inorderIndexMap.put(inorder[i],i);
         }
-        return -1;
+
+        return arrayToTree(preorder,0,preorder.length-1);
     }
-    static int preOrderIndex =0;
-    Node buildFromInorderPreorder(int[] inorder,int[] preorder,int inStart,int inEnd)
+
+
+    public Node arrayToTree(int[] preorder, int inStart, int inEnd)
     {
-        //Base Case
-        if(preOrderIndex >= preorder.length || inStart > inEnd)
+        // if there are no elements to construct the tree
+        if(inStart >inEnd)
             return null;
 
-        int element = preorder[preOrderIndex++];
+        // select the preorder_index element as the root and increment it
+        int element = preorder[preorderIndex++];
         Node root = new Node(element);
 
-        //search element in inorder array
-        int pos = position(inorder,element,inStart,inEnd);
+        // build first left subtree and then right subtree
+        // excluding inorderIndexMap[rootValue] element because it's the root
+        int pos = inorderIndexMap.get(element);
 
-        root.left = buildFromInorderPreorder(inorder,preorder,inStart,pos-1);
-        root.right = buildFromInorderPreorder(inorder,preorder,pos+1,inEnd);
+        root.left=arrayToTree(preorder,inStart,pos-1);
+        root.right=arrayToTree(preorder,pos+1,inEnd);
         return root;
-
     }
 
 
@@ -101,7 +138,7 @@ public class TreeFromInorderPreOrder {
         int[] preorder = {3,9,20,15,7}, inorder = {9,3,15,20,7};
 
 
-        Node root = obj.buildFromInorderPreorder(inorder,preorder,0, preorder.length-1);
+        Node root = obj.buildTree(preorder,inorder);
         obj.levelOrder(root);
         //10 5 3 -1 -1 7 6 -1 -1 -1 11 -1 -1
     }
