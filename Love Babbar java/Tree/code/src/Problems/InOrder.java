@@ -62,7 +62,7 @@ public class InOrder {
     public static void main(String[] args) {
         // write your code here
         InOrder tree = new InOrder();
-        InOrder.Node root = tree.buildTree();
+        Node root = tree.buildTree();
 
         System.out.println("Printing In Order");
         tree.inOrder(root);
