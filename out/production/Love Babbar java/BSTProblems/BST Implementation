@@ -185,3 +185,35 @@ Scanner sc = new Scanner(System.in);
                 else
                     return searchRec(root.left,key);
             }
+
+
+
+
+
+
+
+
+
+
+
+
+            Node root;
+
+                // creating a BST
+                public void insertKey(int key) {
+                    root = insertRec(root, key);
+                }
+
+                private Node insertRec(Node root, int key) {
+                    if (root == null) {
+                        root = new Node(key);
+                        return root;
+                    }
+
+                    if(key < root.data){
+                        root.left = insertRec(root.left,key);
+                    }else{
+                        root.right = insertRec(root.right,key);
+                    }
+                    return root;
+                }
