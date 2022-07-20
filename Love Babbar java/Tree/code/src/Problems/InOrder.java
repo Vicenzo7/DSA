@@ -30,6 +30,7 @@ public class InOrder {
 
 
     //inorder
+    int count =0;
     public void inOrder(Node root) {
         //base case
         if (root == null)
@@ -39,6 +40,7 @@ public class InOrder {
         inOrder(root.left);
 
         //Node
+        count++;
         System.out.print(root.value + " ");
 
         //right
@@ -67,6 +69,7 @@ public class InOrder {
         System.out.println("Printing In Order");
         tree.inOrder(root);
         System.out.println();
+        System.out.println(tree.count);
 
 
 
