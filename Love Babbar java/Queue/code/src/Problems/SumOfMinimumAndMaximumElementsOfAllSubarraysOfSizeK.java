@@ -62,7 +62,7 @@ public class SumOfMinimumAndMaximumElementsOfAllSubarraysOfSizeK {
             while (!S.isEmpty() && arr[S.peekLast()] >= arr[i])
                 S.removeLast(); // Remove from rear
 
-            // remove all previous smaller that are elements
+            // remove all previous smaller elements that are
             // are useless
             while (!G.isEmpty() && arr[G.peekLast()] <= arr[i])
                 G.removeLast(); // Remove from rear
