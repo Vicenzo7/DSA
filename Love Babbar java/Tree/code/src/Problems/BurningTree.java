@@ -36,9 +36,11 @@ public class BurningTree {
     }
 
 
+    //find the min time
     public  int calculateTime(Map<Node,Node> map , Node start){
-        //A visited map
+        //A visited map to keep to track of nodes that were burned
         Map<Node,Integer> vis = new HashMap<>();
+
         Queue<Node> q = new LinkedList<>();
 
         q.add(start);
@@ -46,6 +48,7 @@ public class BurningTree {
 
         int time =0;
         while(!q.isEmpty()){
+            // trying to burn the nodes
             int size = q.size();
             boolean burned = false;
             for(int i=0;i<size;i++){
@@ -85,6 +88,7 @@ public class BurningTree {
 
     }
 
+    // mapping children with their parent
     public  Node bfsToMapParent(Node root,Map<Node,Node> map , int start){
         Node res = new Node(-1);
         Queue<Node> q = new LinkedList<>();
@@ -113,7 +117,9 @@ public class BurningTree {
 
     public  int minTime(Node root, int target)
     {
+        // mapping children with their parent
         Map<Node,Node> map = new HashMap<>();
+        //find the min time
         Node start = bfsToMapParent(root,map,target);
         int time = calculateTime(map ,start);
         return time;
