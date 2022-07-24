@@ -101,30 +101,25 @@ Scanner sc = new Scanner(System.in);
 
 
 
-        public Node buildBST(Node root, int data) {
-                if (root == null) {
-                    Node temp = new Node(data);
-                    return temp;
-                }
+       // creating a BST
+           public void insertKey(int key) {
+               root = insertRec(root, key);
+           }
 
-                if (data > root.value) {
-                    root.right = buildBST(root.right, data);
-                } else {
-                    root.left = buildBST(root.left, data);
-                }
-                return root;
-            }
+           private Node insertRec(Node root, int key) {
+               if (root == null) {
+                   root = new Node(key);
+                   return root;
+               }
 
-            public void createBST() {
-                System.out.println("Enter data for root node");
-                int data = sc.nextInt();
+               if(key < root.data){
+                   root.left = insertRec(root.left,key);
+               }else{
+                   root.right = insertRec(root.right,key);
+               }
+               return root;
+           }
 
-                while (data != -1) {
-                    root = buildBST(root, data);
-                    System.out.println("Enter data for node");
-                    data = sc.nextInt();
-                }
-            }
 
             //delete
             public void deleteKey(int key)
