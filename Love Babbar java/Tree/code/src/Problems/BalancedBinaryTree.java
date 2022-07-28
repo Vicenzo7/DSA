@@ -68,4 +68,39 @@ public class BalancedBinaryTree {
 
         //1 2 3 4 -1 -1 4 -1 -1 3 -1 -1 2 -1 -1  not balanced
     }
+
+
+
+    class Pair {
+        boolean isBal;
+        int height;
+    }
+
+    Pair isBalancedFast(Node root){
+        if(root == null){
+            Pair p = new Pair();
+            p.isBal = true;
+            p.height =0;
+            return p;
+        }
+
+
+        Pair leftAns = isBalancedFast(root.left);
+        Pair rightAns = isBalancedFast(root.right);
+        boolean diff = Math.abs(leftAns.height - rightAns.height) <= 1;
+
+        Pair ans = new Pair();
+        ans.height = Math.max(leftAns.height,rightAns.height)+1;
+
+        if(leftAns.isBal && rightAns.isBal && diff){
+            ans.isBal = true;
+        }else{
+            ans.isBal = false;
+        }
+
+        return ans;
+    }
+    public boolean isBalancedPair(Node root) {
+        return isBalancedFast(root).isBal;
+    }
 }
