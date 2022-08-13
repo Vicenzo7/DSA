@@ -3,7 +3,7 @@ package com.company;
 import java.util.*;
 import java.util.Queue;
 
-public class ShortestPathInUndirectedGraphs {
+public class ShortestPathInUndirectedGraphsWithUnitWeight {
     static void addEdge(ArrayList<ArrayList<Integer>> adj, int u,int v){
         adj.get(u).add(v);
         adj.get(v).add(u);
@@ -72,10 +72,3 @@ public class ShortestPathInUndirectedGraphs {
         System.out.println(Arrays.toString(shortestPath(adj, N, 0)));
     }
 }
-
-
-
-
-
-
-
