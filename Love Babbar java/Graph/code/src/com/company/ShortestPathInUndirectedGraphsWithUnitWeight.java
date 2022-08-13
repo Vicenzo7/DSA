@@ -70,5 +70,24 @@ public class ShortestPathInUndirectedGraphsWithUnitWeight {
         }
         int N = adj.size();
         System.out.println(Arrays.toString(shortestPath(adj, N, 0)));
+
+        //output
+        //Enter the no of vertices/node
+        //8
+        //Enter the number of edges for undirected graph
+        //11
+        //give the inputs
+        //0 1
+        //0 3
+        //1 2
+        //1 3
+        //2 6
+        //3 4
+        //4 5
+        //5 6
+        //6 7
+        //6 8
+        //7 8
+        //[0, 1, 2, 1, 2, 3, 3, 4, 4]
     }
 }

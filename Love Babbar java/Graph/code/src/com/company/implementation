@@ -36,3 +36,44 @@ static void addEdge(ArrayList<ArrayList<Integer>> adj, int u,int v){
 
             addEdge(adj,u,v);
         }
+    }
+
+
+
+    // directed graph + weighted
+
+    void addEdge(ArrayList<ArrayList<Node>> adj, int u, int v, int w){
+            adj.get(u).add(new Node(v, w));
+            adj.get(v).add(new Node(u, w));
+
+    }
+
+    public static void main(String[] args) {
+            Dijkstra_sAlgorithm obj = new Dijkstra_sAlgorithm();
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter the no of vertices/node");
+            int n = sc.nextInt();
+
+            ArrayList<ArrayList<Node>> adj = new ArrayList<>();
+
+            for (int i = 0; i <=n ; i++) {
+                adj.add(new ArrayList<>());
+            }
+
+            System.out.println("Enter the number of edges for undirected graph");
+            int m = sc.nextInt();
+
+            System.out.println("give the inputs ");
+
+            for (int i = 0; i < m ; i++) {
+                int u = sc.nextInt();
+                int v = sc.nextInt();
+                int w = sc.nextInt();
+
+                obj.addEdge(adj,u,v,w);
+            }
+
+            System.out.println("enter the source");
+            int src = sc.nextInt();
+            obj.shortestPath(src,adj,n);
+        }

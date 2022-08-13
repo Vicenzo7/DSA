@@ -95,5 +95,25 @@ public class Dijkstra_sAlgorithm {
         System.out.println("enter the source");
         int src = sc.nextInt();
         obj.shortestPath(src,adj,n);
+
+        //output
+//        Enter the no of vertices/node
+//        5
+//        Enter the number of edges for undirected graph
+//        6
+//        give the inputs
+//        1 2 2
+//        1 4 1
+//        2 5 5
+//        2 3 4
+//        4 3 3
+//        3 5 1
+//        enter the source
+//        1
+//        from src to 1 distance is 0
+//        from src to 2 distance is 2
+//        from src to 3 distance is 4
+//        from src to 4 distance is 1
+//        from src to 5 distance is 5
     }
 }

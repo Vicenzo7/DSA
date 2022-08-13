@@ -106,6 +106,28 @@ public class ShortestPathInWeightedDAG {
         System.out.println("enter the source");
         int src = sc.nextInt();
         obj.shortestPath(src,adj,n);
+
+        //output
+        //Enter the no of vertices/node
+        //6
+        //Enter the number of edges for undirected graph
+        //7
+        //give the inputs
+        //0 1 2
+        //0 4 1
+        //1 2 3
+        //2 3 6
+        //4 2 2
+        //4 5 4
+        //5 3 1
+        //enter the source
+        //0
+        //from src to 0 distance is 0
+        //from src to 1 distance is 2
+        //from src to 2 distance is 3
+        //from src to 3 distance is 6
+        //from src to 4 distance is 1
+        //from src to 5 distance is 5
     }
 
 }
