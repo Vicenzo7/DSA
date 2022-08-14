@@ -1,25 +1,19 @@
 package com.company;
 
+//https://leetcode.com/problems/critical-connections-in-a-network/
+// this above question is same as find-bridges in graph
+
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class FindBridges {
+    static ArrayList<ArrayList<Integer>> list = new ArrayList<>();
     static void addEdge(ArrayList<ArrayList<Integer>> adj, int u,int v){
         adj.get(u).add(v);
         adj.get(v).add(u);
     }
-
-    static void printGraph(ArrayList<ArrayList<Integer>> adj){
-        for (int i = 0; i < adj.size() ; i++) {
-            System.out.print(i);
-            for (int j = 0; j < adj.get(i).size(); j++) {
-                System.out.print("->"+adj.get(i).get(j));
-            }
-            System.out.println();
-        }
-    }
-
-
 
 
 
@@ -34,6 +28,9 @@ public class FindBridges {
                 dfs(i,-1,adj,vis,tin,low,timer);
             }
         }
+
+        System.out.println(Arrays.toString(tin));
+        System.out.println(Arrays.toString(low));
     }
 
     private static void dfs(int node, int parent, ArrayList<ArrayList<Integer>> adj, boolean[] vis, int[] tin, int[] low, int timer) {
@@ -47,7 +44,10 @@ public class FindBridges {
                 low[node] = Math.min(low[node], low[it]);
 
                 if (low[it] > tin[node]) {
-                    System.out.println(it + " " + node);
+                    ArrayList<Integer> temp = new ArrayList<>();
+                    temp.add(it);
+                    temp.add(node);
+                    list.add(temp);
                 }
             }else{
                 low[node]= Math.min(low[node],tin[it]);
@@ -63,25 +63,10 @@ public class FindBridges {
 
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
-        for (int i = 0; i <=n ; i++) {
+        for (int i = 0; i <n ; i++) {
             adj.add(new ArrayList<>());
         }
 
-
-//        adj.get(0).add(1);
-//        adj.get(1).add(0);
-//
-//        adj.get(0).add(2);
-//        adj.get(2).add(0);
-//
-//        adj.get(1).add(2);
-//        adj.get(2).add(1);
-//
-//        adj.get(1).add(3);
-//        adj.get(3).add(1);
-//
-//        adj.get(3).add(4);
-//        adj.get(4).add(3);
         System.out.println("Enter the number of edges for undirected graph");
         int m = sc.nextInt();
 
@@ -94,7 +79,49 @@ public class FindBridges {
             addEdge(adj,u,v);
         }
 
-        printBridges(adj,5);
+        printBridges(adj,n);
+        System.out.println(list);
+
+        //Enter the no of vertices/node
+        //13
+        //Enter the number of edges for undirected graph
+        //15
+        //give the inputs
+//        0 1
+//        1 2
+//        1 4
+//        2 3
+//        3 4
+//        4 5
+//        5 6
+//        6 7
+//        6 9
+//        7 8
+//        9 8
+//        8 10
+//        10 11
+//        10 12
+//        11 12
 
     }
 }
+
+
+
+// In Leetcode adjacency list is given as List<List<Integer>>
+// convet into ArrayList<ArrayList<Integer>> than perform operation
+//List<List<Integer>> list = new ArrayList<>();
+//    private void addEdge(int u,int v){
+//        graph.get(u).add(v);
+//        graph.get(v).add(u);
+//    }
+//
+//    private ArrayList<ArrayList<Integer>> graph;
+//
+//    private void BuildGraph(List<List<Integer>> Connections){
+//        for(List<Integer> pair:Connections){
+//            int u=pair.get(0);
+//            int v=pair.get(1);
+//            addEdge(u,v);
+//        }
+//    }
