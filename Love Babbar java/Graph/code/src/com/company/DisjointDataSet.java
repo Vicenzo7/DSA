@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Scanner;
 
-public class DataSet {
+public class DisjointDataSet {
 	static int[] parent = new int[100000]; // 10^5
 	static int[] rank = new int[100000];
 
@@ -19,7 +19,7 @@ public class DataSet {
 		if(node == parent[node]){
 			return node;
 		}
-		// to make it path compressed just save whats comes from the recurssion into parent[node]
+		// to make it path compressed just save what's comes from the recursion into parent[node]
 		return parent[node]=findPar(parent[node]);
 	}
 
@@ -34,11 +34,11 @@ public class DataSet {
 		}else if(rank[u] > rank[v]){
 			parent[v]=u;
 		} else { 
-			// if equal we can attach any one to one of the other
+			// if equal we can attach anyone to one of the other
 			// attaching v to u
 			parent[v]=u;
 
-			// now increase the rank of the node to whom its attached
+			// and only increase the rank if they are equal,now increase the rank of the node to whom its attached
 			rank[u]++;
 		}
 

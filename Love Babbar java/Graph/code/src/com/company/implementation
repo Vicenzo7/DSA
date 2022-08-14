@@ -77,3 +77,22 @@ static void addEdge(ArrayList<ArrayList<Integer>> adj, int u,int v){
             int src = sc.nextInt();
             obj.shortestPath(src,adj,n);
         }
+
+
+class Node {
+        private int v;
+        private int weight;
+
+        public Node(int v, int weight) {
+            this.v = v;
+            this.weight = weight;
+        }
+
+        public int getV() {
+            return v;
+        }
+
+        public int getWeight() {
+            return weight;
+        }
+    }
