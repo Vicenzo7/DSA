@@ -1,5 +1,5 @@
 package com.company;
-
+//https://www.geeksforgeeks.org/maximise-number-of-cuts-in-a-rod-if-it-can-be-cut-only-in-given-3-sizes/
 import java.util.Arrays;
 
 public class RodCutting {
@@ -72,16 +72,16 @@ public class RodCutting {
 
         dp[0]=0;
 
-        for (int i = 0; i <= n; i++) {
-            int first = n-a;
-            int second = n-b;
-            int third = n-c;
+        for (int i = 1; i <= n; i++) {
+            int first = dp[n-a];
+            int second = dp[n-b];
+            int third = dp[n-c];
 
             dp[i]= 1+Math.max(first,Math.max(second,third));
         }
 
 
         System.out.println(Arrays.toString(dp));
-        return dp[0] ;
+        return dp[n] ;
     }
 }
