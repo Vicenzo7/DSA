@@ -1,10 +1,11 @@
-package Problems;
+package com.company.linkedlist;
 
-public class KthNodeFromEndOfLL {
+public class PrintLastKthNodeInLL {
+
     public Node head;
     public Node tail;
     public int size;
-    public KthNodeFromEndOfLL() {
+    public PrintLastKthNodeInLL() {
         this.size =0;
     }
 
@@ -48,7 +49,7 @@ public class KthNodeFromEndOfLL {
 
     //display function
     public void display2(Node head){
-       Node temp = head;
+        Node temp = head;
         while(temp != null){
             System.out.print(temp.value + " ->  ");
             temp = temp.next;
@@ -56,56 +57,6 @@ public class KthNodeFromEndOfLL {
         System.out.println("END");
     }
 
-    // with slow fast pointer
-    // slow and fast with a gap of K
-    public void kthElementFromEnd(Node head,int k)
-    {
-        if(head == null)
-        {
-            System.out.println("Empty list");
-        }
-        Node slow = head;
-        Node fast = head;
-
-        //moving fast pointer to a point where gap between slow and fast is k
-
-        while(k!=0)
-        {
-            fast = fast.next;
-            k--;
-        }
-
-        while(fast != null )
-        {
-            slow = slow.next;
-            fast = fast.next;
-        }
-        // after while the slow will reach the kth element from last
-        System.out.println(slow.value);
-    }
-
-    int count =0;
-
-    // same using recursion
-    public void  kthElementFromEnd2(Node head,int k){
-
-        //base case
-        if(head == null)
-        {
-            return;
-        }
-
-        kthElementFromEnd2(head.next,k);
-
-        count=count+1;
-
-        if(count == k)
-        {
-            System.out.println(head.value);
-        }
-
-
-    }
 
 
     public class Node{
@@ -122,22 +73,40 @@ public class KthNodeFromEndOfLL {
         }
     }
 
-    public static void main(String[] args) {
+    int count =0;
+    void kthLastNode(Node head,int k){
+        Node temp = head;
 
-        KthNodeFromEndOfLL list = new KthNodeFromEndOfLL();
-        list.insertLast(1);
+        kthLastNodeRecur(temp,k);
+    }
+
+    void kthLastNodeRecur(Node node,int k){
+
+        // base case
+        if(node == null)
+            return;
+
+       kthLastNodeRecur(node.next,k);
+
+       count = count+1;
+       if(count == k)
+           System.out.println(node.value);
+
+    }
+
+
+    public static void main(String[] args) {
+        PrintLastKthNodeInLL list = new PrintLastKthNodeInLL();
+
+        list.insertLast(5);
+        list.insertLast(4);
         list.insertLast(2);
         list.insertLast(3);
-        list.insertLast(4);
-        list.insertLast(5);
-        list.insertLast(6);
+        list.insertLast(1);
         list.insertLast(7);
-        list.insertLast(8);
         list.insertLast(9);
-        list.insertLast(10);
-        int k=3;
-        list.kthElementFromEnd(list.head,k);
 
-        list.kthElementFromEnd2(list.head, k);
+
+        list.kthLastNode(list.head,2);
     }
 }
