@@ -49,6 +49,8 @@ public class MinimumSidewayJumps {
 
             int ans = Integer.MAX_VALUE;
             for(int i=1;i<=3;i++){
+                // did this to avoid the frog jumping on the same lane and
+                // jumping to left or right lanes only if there is no obstacles
                 if(i != curlane && obs[curpos]!= i){
                     ans = Math.min(ans,1+ solve(obs,i,curpos));
                 }
@@ -84,6 +86,8 @@ public class MinimumSidewayJumps {
 
             int ans = Integer.MAX_VALUE;
             for(int i=1;i<=3;i++){
+                // did this to avoid the frog jumping on the same lane and
+                // jumping to left or right lanes only if there is no obstacles
                 if(i != curlane && obs[curpos]!= i){
 
                     // 1+ because we did a jump and then went forward
@@ -113,21 +117,23 @@ public class MinimumSidewayJumps {
 
         for(int currpos = n-1; currpos>=0; currpos--) {
             for(int currlane =1; currlane<=3; currlane++) {
-                int finalAns = 0;
+                int jump = 0;
                 if(obs[currpos+1] != currlane) {
-                    finalAns =  dp[currlane][currpos+1];
+                    jump =  dp[currlane][currpos+1];
                 }
                 else {
                     //sideways movement
                     int ans = Integer.MAX_VALUE;
                     for(int i =1; i<=3; i++ ){
+                        // did this to avoid the frog jumping on the same lane and
+                        // jumping to left or right lanes only if there is no obstacles
                         if(i != currlane && obs[currpos] != i) {
                             ans = Math.min(ans, 1 + dp[i][currpos + 1] );
                         }
                     }
-                    finalAns =  ans;
+                    jump =  ans;
                 }
-                dp[currlane][currpos] = finalAns;
+                dp[currlane][currpos] = jump;
             }
         }
 
