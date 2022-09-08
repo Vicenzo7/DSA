@@ -52,7 +52,7 @@ public class LetterTilePossibilities {
                 output.append(ch);
                 visited[i] = true;
 
-                result.add(""+output);
+                result.add(output.toString());
                 solve(tiles,output,result,visited);
 
                 //backtrack
