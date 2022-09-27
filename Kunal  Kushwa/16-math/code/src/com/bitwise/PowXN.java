@@ -1,4 +1,4 @@
-package com.math;
+package com.bitwise;
 //https://leetcode.com/problems/powx-n/
 public class PowXN {
     public static void main(String[] args) {

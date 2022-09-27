@@ -1,4 +1,4 @@
-package com.math;
+package com.bitwise;
 
 public class PowerOfTwo {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.math;
+package com.bitwise;
 //https://practice.geeksforgeeks.org/problems/magic-number4431/1
 public class MagicNumber {
     public static void main(String[] args) {

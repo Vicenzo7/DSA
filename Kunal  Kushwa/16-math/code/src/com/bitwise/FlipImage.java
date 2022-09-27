@@ -1,4 +1,4 @@
-package com.math;
+package com.bitwise;
 
 import java.util.Arrays;
 
