@@ -1,4 +1,4 @@
-package basic;
+package intro;
 
 public class Main {
 
