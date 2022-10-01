@@ -1,4 +1,4 @@
-package RecursionYT;
+package com.backtracking;
 
 import java.util.ArrayList;
 import java.util.Collections;
