@@ -1,6 +1,8 @@
 package com.company.medium;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 //https://leetcode.com/problems/word-break/
 public class WordBreak {

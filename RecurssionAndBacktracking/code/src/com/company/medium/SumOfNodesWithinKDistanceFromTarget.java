@@ -1,6 +1,5 @@
 package com.company.medium;
 
-import java.util.*;
 //
 public class SumOfNodesWithinKDistanceFromTarget {
 //    Scanner sc = new Scanner(System.in);
