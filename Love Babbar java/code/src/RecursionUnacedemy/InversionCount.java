@@ -1,7 +1,5 @@
 package RecursionUnacedemy;
 
-import java.util.Arrays;
-
 public class InversionCount {
     public static void main(String[] args) {
         long[] arr={2, 4, 1, 3, 5};
