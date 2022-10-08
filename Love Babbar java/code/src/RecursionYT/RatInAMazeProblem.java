@@ -25,11 +25,6 @@ public class RatInAMazeProblem {
         StringBuilder output = new StringBuilder("");
         //initialise it to false
         boolean[][] visited = new boolean[n][n];
-        for (int i = 0; i < n ; i++) {
-            for (int j = 0; j < n ; j++) {
-                visited[i][j] = false;
-            }
-        }
         int srcx=0;
         int srcy =0;
         solve(m ,srcx,srcy,output,ans,visited);
