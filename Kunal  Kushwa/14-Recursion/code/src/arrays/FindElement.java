@@ -81,7 +81,7 @@ public class FindElement {
 
 
 
-    // By taking the list ib the body of function and not in the argument
+    // By taking the list in the body of function and not in the argument
     static ArrayList<Integer> findAllIndex2(int[] arr, int target, int index) {
 
         ArrayList<Integer> list = new ArrayList<>();
