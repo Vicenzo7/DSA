@@ -12,22 +12,20 @@ public class LetterCombinationsAfAPhoneNumber {
     public static List<String> letterCombinations(String digits) {
         List<String> ans = new ArrayList<>();
 
-        if(digits.length() == 0)
+        if (digits.length() == 0)
             return ans;
 
-        String[] list = {"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
-        StringBuilder output= new StringBuilder("");
+        String[] list = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        StringBuilder output = new StringBuilder("");
 
-        solve(digits,0,list,output,ans);
+        solve(digits, 0, list, output, ans);
 
         return ans;
     }
 
-    public static void solve(String digits,int index,String[] list,StringBuilder output,List<String> ans)
-    {
+    public static void solve(String digits, int index, String[] list, StringBuilder output, List<String> ans) {
         //base case
-        if(index == digits.length())
-        {
+        if (index == digits.length()) {
             ans.add(String.valueOf(output));
             return;
         }
@@ -36,10 +34,10 @@ public class LetterCombinationsAfAPhoneNumber {
         String value = list[num];
 
 
-        for (int i = 0; i < value.length() ; i++) {
+        for (int i = 0; i < value.length(); i++) {
             output.append(value.charAt(i));
-            solve(digits,index+1,list,output,ans);
-            output.deleteCharAt(output.length()-1);
+            solve(digits, index + 1, list, output, ans);
+            output.deleteCharAt(output.length() - 1);
 
         }
     }

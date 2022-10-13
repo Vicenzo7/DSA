@@ -10,7 +10,10 @@ public class SubSeq {
 //        subseq("", s, ans);
 //        System.out.println(ans);
 
-        System.out.println(subseqReturn("",s));
+        //System.out.println(subseqReturn("",s));
+
+//        subseqAscii("",s);
+        System.out.println(subseqAsciiReturn("",s));
     }
 
 
@@ -58,6 +61,50 @@ public class SubSeq {
 
         left.addAll(right);
         return left;
-
     }
+
+
+    static void subseqAscii(String p, String up) {
+        if (up.isEmpty()) {
+            System.out.println(p);
+            return;
+        }
+
+        char ch = up.charAt(0);
+        //include
+        subseqAscii(p + ch, up.substring(1));
+        //exclude
+        subseqAscii(p, up.substring(1));
+
+        //Ascii
+        subseqAscii(p+ (ch+0), up.substring(1));
+    }
+
+    static ArrayList<String> subseqAsciiReturn(String p, String up) {
+        if (up.isEmpty()) {
+            ArrayList<String> list = new ArrayList<>();
+            list.add(p);
+            return list;
+        }
+
+        char ch = up.charAt(0);
+        //include
+        ArrayList<String> first = subseqAsciiReturn(p + ch, up.substring(1));
+        //exclude
+        ArrayList<String> second = subseqAsciiReturn(p, up.substring(1));
+        //Ascii
+        ArrayList<String> third = subseqAsciiReturn(p + (ch+0), up.substring(1));
+
+
+        first.addAll(second);
+        first.addAll(third);
+        return first;
+    }
+
+
+
+
+
+
+
 }
