@@ -46,7 +46,7 @@ public class Dice {
             System.out.print(p + " ");
             return;
         }
-        
+
         for (int i = 1; i <= faces && i <= target; i++) {
             diceFace(p + i, target - i, faces);
         }
