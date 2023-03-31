@@ -51,7 +51,7 @@ public class SecondLargestAndSmallestInArray {
             if (num > largest) {
                 secondLargest = largest;
                 largest = num;
-            } else if (num > secondLargest) {
+            } else if (num > secondLargest && num != largest) {
                 secondLargest = num;
             }
         }
@@ -67,7 +67,7 @@ public class SecondLargestAndSmallestInArray {
             if (num < smallest) {
                 secondSmallest = smallest;
                 smallest = num;
-            } else if (num < secondSmallest) {
+            } else if (num < secondSmallest && num != smallest) {
                 secondSmallest = num;
             }
         }
