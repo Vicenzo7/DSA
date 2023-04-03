@@ -11,7 +11,7 @@ public class MaximumSubarraySumInAnArray {
      * Brute force
      * TC O(n^2)*/
     public static int maxSubArray(int[] nums) {
-        int[] subArrayIndex = new int[2];
+        int  start = 0, end = 0;
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < nums.length; i++) {
             int sum = 0;
@@ -19,12 +19,12 @@ public class MaximumSubarraySumInAnArray {
                 sum += nums[j];
                 if (sum > max) {
                     max = sum;
-                    subArrayIndex[0] = i;
-                    subArrayIndex[1] = j;
+                    start = i;
+                    end = j;
                 }
             }
         }
-        for (int i = subArrayIndex[0]; i <= subArrayIndex[1]; i++) {
+        for (int i = start; i <= end; i++) {
             System.out.print(nums[i] + " ");
         }
         System.out.println();
