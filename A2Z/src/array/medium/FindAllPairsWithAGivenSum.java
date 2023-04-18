@@ -8,8 +8,7 @@ public class FindAllPairsWithAGivenSum {
         long[] nums2 = {5, 6, 3, 4, 8};
         int x = 9;
         Pair[] pairs = allPairs(nums1, nums2, nums1.length, nums2.length, x);
-        for (int i = 0; i < pairs.length; i++) {
-            Pair pair = pairs[i];
+        for (Pair pair : pairs) {
             System.out.println(pair.first + "-" + pair.second);
         }
     }
