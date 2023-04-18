@@ -49,7 +49,7 @@ public class LongestSubArrayWithSumK {
         int start = 0, end = -1, sum = 0, maxLength = 0;
 
         while (start < nums.length) {
-            while ((end + 1 < nums.length) && nums[end + 1] <= target) {
+            while ((end + 1 < nums.length) && (sum + nums[end + 1] <= target)) {
                 sum += nums[++end];
             }
             if (sum == target) {
