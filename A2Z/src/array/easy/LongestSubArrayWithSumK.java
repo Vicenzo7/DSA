@@ -74,17 +74,17 @@ public class LongestSubArrayWithSumK {
         * it's same as x-y = k means there exist a k
         * */
 
-        Map<Integer,Integer> prefixSum = new HashMap<>();
+        Map<Integer,Integer> prefixSumIndexMap = new HashMap<>();
         int sum = 0;
         int length = 0;
         int endingIndex = -1;
-        prefixSum.put(0,-1);
+        prefixSumIndexMap.put(0,-1);
         for (int i = 0; i < nums.length ; i++) {
             sum += nums[i];
-            prefixSum.putIfAbsent(sum,i);
+            prefixSumIndexMap.putIfAbsent(sum,i);
 
-            if(prefixSum.containsKey(sum-k) && length < i-prefixSum.get(sum-k)) {
-                length = i - prefixSum.get(sum-k);
+            if(prefixSumIndexMap.containsKey(sum-k) && length < i-prefixSumIndexMap.get(sum-k)) {
+                length = i - prefixSumIndexMap.get(sum-k);
                 endingIndex=i;
             }
         }

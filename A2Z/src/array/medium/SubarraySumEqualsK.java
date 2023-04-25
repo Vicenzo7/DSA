@@ -53,15 +53,15 @@ public class SubarraySumEqualsK {
 
     public static int subarraySumOptimal(int[] nums, int k) {
         int count = 0;
-        Map<Integer, Integer> prefixSum = new HashMap<>();
-        prefixSum.put(0, 1);
+        Map<Integer, Integer> prefixSumCountMap = new HashMap<>();
+        prefixSumCountMap.put(0, 1);
         int sum = 0;
         for (int num : nums) {
             sum += num;
 
-            count += prefixSum.getOrDefault(sum - k, 0);
+            count += prefixSumCountMap.getOrDefault(sum - k, 0);
 
-            prefixSum.put(sum, prefixSum.getOrDefault(sum, 0) + 1);
+            prefixSumCountMap.put(sum, prefixSumCountMap.getOrDefault(sum, 0) + 1);
         }
         return count;
 
