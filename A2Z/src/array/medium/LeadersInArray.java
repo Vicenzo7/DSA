@@ -11,7 +11,7 @@ public class LeadersInArray {
     }
 
     /*
-     * Leaders in array means a element which is greater than all the element on it right side*/
+     * Leaders in array means an element which is greater than all the element on it right side*/
 
     public static ArrayList<Integer> leaders(int[] nums) {
         ArrayList<Integer> leaders = new ArrayList<>();
@@ -39,7 +39,7 @@ public class LeadersInArray {
      *
      * In the first approach we are again and again checking if the current element is the leader,
      * An Optimal approach would be if we carefully think
-     * We can traverse from the back and for a element to be a leader instead of checking the whole right side
+     * We can traverse from the back and for an element to be a leader instead of checking the whole right side
      * we could keep a track of the greatest element encountered till now from the back
      *
      * So here to check if the currentElement leader, currentElement should be greater than the greatest element

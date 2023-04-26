@@ -126,13 +126,13 @@ public class SetMatrixZeros {
     public static void setZeroesOptimal2(int[][] matrix) {
         int rowLength = matrix.length;
         int colLength = matrix[0].length;
-        boolean isrow0 = false, isCol0 = false;
+        boolean isRow0 = false, isCol0 = false;
 
         // check if 0th row contains zero
 
         for (int i = 0; i < rowLength; i++) {
             if (matrix[i][0] == 0) {
-                isrow0 = true;
+                isRow0 = true;
                 break;
             }
         }
@@ -163,7 +163,7 @@ public class SetMatrixZeros {
             }
         }
         // After this is the 0th row or col might have contained 0 this info is stored in isRow0 and isCol0
-        if (isrow0) {
+        if (isRow0) {
             for (int i = 0; i < rowLength; i++) {
                 matrix[i][0] = 0;
             }
