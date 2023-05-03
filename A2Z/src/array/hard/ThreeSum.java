@@ -96,7 +96,7 @@ public class ThreeSum {
                     }
                 } else if (sum < 0) { // if the sum < 0 we move start forward in search to make  sum zero
                     start++;
-                } else { // if sum > 0 we decrement endd in search to make sum 0
+                } else { // if sum > 0 we decrement end in search to make sum 0
                     end--;
                 }
             }
