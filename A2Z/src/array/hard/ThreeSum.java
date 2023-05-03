@@ -32,11 +32,11 @@ public class ThreeSum {
             for (int j = i + 1; j < nums.length - 1; j++) {
                 for (int k = j + 1; k < nums.length; k++) {
                     if (nums[i] + nums[j] + nums[k] == 0) {
-                        Set<Integer> temp = new HashSet<>();
+                        List<Integer> temp = new ArrayList<>();
                         temp.add(nums[i]);
                         temp.add(nums[j]);
                         temp.add(nums[k]);
-                        result.add(temp.stream().toList());
+                        result.add(temp);
                     }
                 }
             }
@@ -138,6 +138,7 @@ public class ThreeSum {
                 }
 
                 if (Math.abs(sum - X) < minimum) {
+                    // sum -x is the distance from x
                     minimum = Math.abs(sum - X);
                     closest = sum;
                 }
