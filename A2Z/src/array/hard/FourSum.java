@@ -114,15 +114,17 @@ public class FourSum {
         Set<List<Integer>> uniqueQuadruplets = new HashSet<>();
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
-                Set<Integer> prefixSum = new HashSet<>();
+                Set<Long> prefixSum = new HashSet<>();
                 for (int k = j + 1; k < nums.length; k++) {
-                    int fourthElement = target - (nums[i] + nums[j] + nums[k]);
+                    //taking a bigger data type to avoid integer overflow
+                    long sum = nums[i] + nums[j] + nums[k];
+                    long fourthElement = target - sum;
                     if (prefixSum.contains(fourthElement)) {
-                        List<Integer> tempList = Arrays.asList(nums[i], nums[j], nums[k], fourthElement);
+                        List<Integer> tempList = Arrays.asList(nums[i], nums[j], nums[k], (int) fourthElement);
                         Collections.sort(tempList);
                         uniqueQuadruplets.add(tempList);
                     }
-                    prefixSum.add(nums[k]);
+                    prefixSum.add((long) nums[k]);
                 }
             }
         }
