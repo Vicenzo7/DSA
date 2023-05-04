@@ -103,6 +103,7 @@ public class MergeSortedArrayWithoutExtraSpace {
         while(gap > 0) {
             int left = 0;
             int right = left+gap;
+            // right < length because the right pointer will extinguish out of length first
             while(right < length) {
                 // comparing arr1 and arr2 elements
                 if(left < m && right >= m) {
