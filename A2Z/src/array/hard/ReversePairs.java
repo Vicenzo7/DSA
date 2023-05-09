@@ -86,6 +86,7 @@ public class ReversePairs {
             while (j < second.length && first[i] > (2 * (long) second[j])) {
                 j++;
             }
+            // j is the number of elements in second array that form reverse pair with element at ith index in first array
             reversePairCount += j;
         }
 
