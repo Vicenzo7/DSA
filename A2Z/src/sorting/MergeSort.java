@@ -14,7 +14,7 @@ public class MergeSort {
          high = rightmost index of the array
          mid = Middle index of the array
 
-        Time complexity: O(nlogn)
+        Time complexity: O(nlog(n))
 
         Reason: At each step, we divide the whole array, for that logn and we assume n steps are taken to get a sorted array, so overall time complexity will be nlogn
 

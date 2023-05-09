@@ -49,6 +49,13 @@ public class CountInversion {
              /\
            [5] [3]
 
+        eg          [1,2,3,4,5]
+                      /     \
+               [2,3,5]      [1,4]
+                 /\          /\
+            [2,3]  [5]     [1]  [4]
+             /\
+           [3] [5]
 
 
 
@@ -91,7 +98,7 @@ public class CountInversion {
                 // since the first array is sorted all the elements would form a pair with second[index2]
                 // so to count the number of pair that can be formed, the second array starts from mid+1 and the element
                 // from the first array which starts to form pair is at (low+index1), so the element between them is (mid+1) - (low+index1)
-                // low +index1 because suppose the inversion count is at [4]  [1]  where 4 is at 3 and 1 is at 4 index 
+                // low +index1 because suppose the inversion count is at [4]  [1]  where 4 is at 3 and 1 is at 4 index
 
                 inversionCount += (mid + 1) - (low + index1);
             }
