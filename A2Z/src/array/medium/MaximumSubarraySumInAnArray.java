@@ -4,7 +4,7 @@ public class MaximumSubarraySumInAnArray {
     public static void main(String[] args) {
         int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
         System.out.println(maxSubArray(nums));
-        System.out.println(maxSubArrayOptimal(nums));
+        System.out.println(maxSubArrayOptimalKadane(nums));
     }
 
     /*
@@ -40,7 +40,7 @@ public class MaximumSubarraySumInAnArray {
      * But if we find sum < 0 we update the sum to 0 and our new starting point will be s = i+1;
      * */
 
-    public static int maxSubArrayOptimal(int[] nums) {
+    public static int maxSubArrayOptimalKadane(int[] nums) {
         int max = Integer.MIN_VALUE;
         int sum = 0;
         int startingPoint = 0, start = 0, end = 0;
