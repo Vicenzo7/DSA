@@ -52,6 +52,25 @@ public class ReversePairs {
         step5 : Merge the array
 
 
+            [40,25,19,12,9,6,2]
+                /          \
+      [40,25,19,12]         [9,6,2]
+          /\                   /\
+     [40,25]  [19,12]       [9,6]  [2]]
+       /\         /\            /\
+    [40] [25]   [19] [12]       [9] [6]
+
+
+    // before merging check for reverse pairs with left and right sorted array from previous merge
+
+            [2,6,9,12,19,25,40]
+                /          \
+      [12,19,25,40]         [2,6,9]
+          /\                   /\
+     [25,40]  [12,19]       [6,9]  [2]
+       /\         /\            /\
+    [40] [25]   [19] [12]       [9] [6]
+
 
         TC = O(nlog(n)) + O(n) + O(n)
             merge sort    merge   count the reverse pair

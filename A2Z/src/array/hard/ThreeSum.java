@@ -81,7 +81,7 @@ public class ThreeSum {
 
             // skipping the duplicates
             if (i > 0 && nums[i] == nums[i - 1]) {
-                i++;
+                continue;
             }
             int start = i + 1, end = nums.length - 1;
             while (start < end) {

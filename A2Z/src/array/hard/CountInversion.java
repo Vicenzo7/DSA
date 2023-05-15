@@ -101,6 +101,7 @@ public class CountInversion {
                 // low +index1 because suppose the inversion count is at [4]  [1]  where 4 is at 3 and 1 is at 4 index
 
                 inversionCount += (mid + 1) - (low + index1);
+//                inversionCount += first.length-index1;
             }
         }
 
