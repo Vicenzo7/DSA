@@ -1,4 +1,4 @@
-package binarysearch;
+package binarysearch.oneDArray;
 
 public class FindMinimumInSortedAndRotatedArray {
     public static void main(String[] args) {

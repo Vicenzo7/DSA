@@ -1,4 +1,4 @@
-package binarysearch;
+package binarysearch.oneDArray;
 
 public class BinarySearch {
 
@@ -6,7 +6,7 @@ public class BinarySearch {
         int[] nums = {-1, 0, 3, 5, 9, 12};
         int target = 9;
 //        System.out.println(binarySearch(nums, target));
-        System.out.println(recursiveBinarySearch(nums, target,0, nums.length-1));
+        System.out.println(recursiveBinarySearch(nums, target, 0, nums.length - 1));
     }
 
 
@@ -22,9 +22,9 @@ public class BinarySearch {
             if (nums[mid] == target) {
                 return mid;
             } else if (nums[mid] < target) {
-                low = mid+1;
+                low = mid + 1;
             } else {
-                high = mid-1;
+                high = mid - 1;
             }
         }
         return -1;
@@ -40,11 +40,11 @@ public class BinarySearch {
         }
 
         int mid = low + (high - low) / 2;
-        if(nums[mid] == target) return mid;
+        if (nums[mid] == target) return mid;
         else if (nums[mid] < target) {
-            return recursiveBinarySearch(nums,target,mid+1,high);
+            return recursiveBinarySearch(nums, target, mid + 1, high);
         } else {
-            return recursiveBinarySearch(nums,target,low,mid-1);
+            return recursiveBinarySearch(nums, target, low, mid - 1);
         }
     }
 }

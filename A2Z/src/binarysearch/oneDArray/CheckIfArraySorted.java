@@ -1,4 +1,4 @@
-package binarysearch;
+package binarysearch.oneDArray;
 
 public class CheckIfArraySorted {
     public static void main(String[] args) {

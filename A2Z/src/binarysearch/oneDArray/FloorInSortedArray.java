@@ -1,4 +1,4 @@
-package binarysearch;
+package binarysearch.oneDArray;
 //https://practice.geeksforgeeks.org/problems/floor-in-a-sorted-array-1587115620/1?track=DSASP-Searching&amp%3BbatchId=154
 public class FloorInSortedArray {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package binarysearch;
+package binarysearch.oneDArray;
 
 import java.util.Map;
 

@@ -1,4 +1,4 @@
-package binarysearch;
+package binarysearch.oneDArray;
 
 public class KthElementOfTwoSortedArray {
     public static void main(String[] args) {
@@ -49,7 +49,6 @@ public class KthElementOfTwoSortedArray {
                 answer = nums2[index2];
                 ++index2;
             }
-
             counter++;
         }
 
@@ -80,7 +79,7 @@ public class KthElementOfTwoSortedArray {
 
        We need to find which element of num1 and num2 in left part and the last index of left part will always be our answer
       from num1
-      2 3 4 last element l1 = 4
+      1 3 4 last element l1 = 4
 
       from num2
       2 3 last element l2 = 3
@@ -102,14 +101,14 @@ public class KthElementOfTwoSortedArray {
         l1 <= r1 definitely because it's the same array
         l2 <= r2 definitely because it's the same array
 
-Case 1:
-we need to prove l1 <= r2 and l2 <= r1
+    Case 1:
+    we need to prove l1 <= r2 and l2 <= r1
 
-    1 3   | 4 7 10 12
-   2 3 6 | 15
+        1 3   | 4 7 10 12
+       2 3 6 | 15
 
-here l1 <= r2 but l2 <= r1 is false
-     3  <= 15 but 6 <= 4 false
+    here l1 <= r2 but l2 <= r1 is false
+         3  <= 15 but 6 <= 4 false
 
      so l2 must be small and r1 must be big
      in sort we should have more elements from the num1 and less element from num2
@@ -119,17 +118,17 @@ here l1 <= r2 but l2 <= r1 is false
       To get this we need to go right
 
 
-Case 2:
-we need to prove l1 <= r2 and l2 <= r1
+    Case 2:
+    we need to prove l1 <= r2 and l2 <= r1
 
-   1 3 4 7 | 10 12
-       2 3 | 6 15
+       1 3 4 7 | 10 12
+           2 3 | 6 15
 
-here l1 <= r2 false  but l2 <= r1 is true
-     7  <= 6 false but 3 <= 10 true
+    here l1 <= r2 false  but l2 <= r1 is true
+         7  <= 6 false but 3 <= 10 true
 
      so l1 must be small and r2 must be big
-     in sort we should have fewer elements from the num1 and more element from num2
+     in-short we should have fewer elements from the num1 and more element from num2
     1 3 4 | 10 12
       2 3 | 15
 
