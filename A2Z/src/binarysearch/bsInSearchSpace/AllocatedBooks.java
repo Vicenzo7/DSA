@@ -27,6 +27,8 @@ public class AllocatedBooks {
 
         Later check if studentCount == student
 
+        TC = O(n * log(sumOfPages)
+
 
     */
 

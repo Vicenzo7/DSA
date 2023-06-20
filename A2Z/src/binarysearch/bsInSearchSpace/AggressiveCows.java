@@ -63,6 +63,7 @@ public class AggressiveCows {
         In previous approach we are checking linearly if a distance is a possible distance or not.
         Instead of doing linearly we could do it through binary Search
 
+        Tc O(n*log(maxDistance))
 
     */
 
