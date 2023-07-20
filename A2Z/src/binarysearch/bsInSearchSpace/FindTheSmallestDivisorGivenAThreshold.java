@@ -11,10 +11,10 @@ public class FindTheSmallestDivisorGivenAThreshold {
     /*
         Binary Search Space Problem
         Basic find the range,
-        range will be from 1int a to maxElement in the array.
+        range will be from 1 to maxElement in the array.
         Edge Case. if no of element == threshold, the smallest divisor will be the maxElement by logic
 
-        After range is found calculate the mid anc check if mid can be a smallest divisor,
+        After range is found calculate the mid anc check if mid can be the smallest divisor,
         if mid is the smallest divisor store it and go towards left because we need minimum
         if not go towards right.
 
