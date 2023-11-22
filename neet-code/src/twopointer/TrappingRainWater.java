@@ -26,8 +26,8 @@ public class TrappingRainWater {
 //            if (i == 0) {
 //                maxLeftHeight[i] = 0;
 //            } else {
-//                maxLeftHeight[i] = Math.max(maxHeight, height[i - 1]);
 //                maxHeight = Math.max(maxHeight, height[i - 1]);
+//                maxLeftHeight[i] = maxHeight;
 //            }
 //        }
 //
@@ -36,8 +36,8 @@ public class TrappingRainWater {
 //            if (i == height.length - 1) {
 //                maxRightHeight[i] = 0;
 //            } else {
-//                maxRightHeight[i] = Math.max(maxHeight, height[i + 1]);
 //                maxHeight = Math.max(maxHeight, height[i + 1]);
+//                maxRightHeight[i] = maxHeight;
 //            }
 //        }
 //
