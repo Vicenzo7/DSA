@@ -182,13 +182,13 @@ public class KthElementOfTwoSortedArray {
     */
 
 
-    public static long kthElement(int[] nums1, int[] nums2, int n, int m, int k) {
+    public static long kthElement(int[] nums1, int[] nums2, int m, int n, int k) {
         // since we are going to do binary Search on the shortest array to reduce time complexity
-        if (n > m) {
-            return kthElement(nums2, nums1, m, n, k);
+        if (m > n) {
+            return kthElement(nums2, nums1, n, m, k);
         }
-        int low = Math.max(0, k - m); // min elements we can take from the smallest array is 0, but what if k > size of largest array we need to take at least one from the smallest array
-        int high = Math.min(k, n); // max elements we can take from the smallest array is nums1.length ie all the element but what is k < nums1.length , then we can't take all element we need to take k no. of elements.
+        int low = Math.max(0, k - n); // min elements we can take from the smallest array is 0, but what if k > size of largest array we need to take at least one from the smallest array
+        int high = Math.min(k, m); // max elements we can take from the smallest array is nums1.length ie all the element but what is k < nums1.length , then we can't take all element we need to take k no. of elements.
 
         while (low <= high) {
             int cut1 = low + (high - low) / 2; // number of elements taken from the smallest array
