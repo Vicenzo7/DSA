@@ -23,8 +23,8 @@ public class ValidPalindrome {
         s = s.toLowerCase();
         int left = 0, right = s.length() - 1;
         while (left < right) {
-            while (left < right && !isAlphanumeric(s.charAt(left))) left++;
-            while (right > left && !isAlphanumeric(s.charAt(right))) right--;
+            while (left < right && isNotAlphanumeric(s.charAt(left))) left++;
+            while (right > left && isNotAlphanumeric(s.charAt(right))) right--;
 
             if (s.charAt(left) != s.charAt(right)) return false;
 
@@ -35,8 +35,8 @@ public class ValidPalindrome {
         return true;
     }
 
-    public static boolean isAlphanumeric(char ch) {
+    public static boolean isNotAlphanumeric(char ch) {
         // Check if the character is a letter (uppercase or lowercase) or a digit
-        return (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z') || (ch >= '0' && ch <= '9');
+        return (ch < 'A' || ch > 'Z') && (ch < 'a' || ch > 'z') && (ch < '0' || ch > '9');
     }
 }
