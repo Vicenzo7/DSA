@@ -1,5 +1,8 @@
 package linkedList;
 
+import linkedList.implementation.ListNode;
+import linkedList.implementation.SinglyLinkedList;
+
 public class RemoveNthNodeFromTheEndOfTheList {
     public static void main(String[] args) {
         SinglyLinkedList ll = new SinglyLinkedList();

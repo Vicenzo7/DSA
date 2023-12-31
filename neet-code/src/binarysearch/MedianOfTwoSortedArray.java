@@ -44,7 +44,7 @@ public class MedianOfTwoSortedArray {
 
     // left side        right side
     // 1 2           // 3 4 5
-    // 1 2 3 4          //4 5 6 7 8
+    // 1 2 3 4          // 5 6 7 8
     public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
         if (nums1.length > nums2.length) {
             return findMedianSortedArrays(nums2, nums1);

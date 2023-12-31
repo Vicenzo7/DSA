@@ -1,5 +1,5 @@
 
-**Import formula to find how many blocks of water can be stored at index i**
+**Important formula to find how many blocks of water can be stored at index i**
 
 $$
 minimum(maxLeftHeight,maxRightHeight) - height[i]

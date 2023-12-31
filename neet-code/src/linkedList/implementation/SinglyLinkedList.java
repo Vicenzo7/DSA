@@ -1,9 +1,9 @@
-package linkedList;
+package linkedList.implementation;
 
 // Implementation for Singly Linked List
 public class SinglyLinkedList {
-    ListNode head;
-    ListNode tail;
+    public ListNode head;
+    public ListNode tail;
 
     public SinglyLinkedList() {
         head = new ListNode(-1);

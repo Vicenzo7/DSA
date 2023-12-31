@@ -1,5 +1,8 @@
 package linkedList;
 
+import linkedList.implementation.ListNode;
+import linkedList.implementation.SinglyLinkedList;
+
 public class LinkedListCycle {
     public static void main(String[] args) {
         SinglyLinkedList myList = new SinglyLinkedList();
