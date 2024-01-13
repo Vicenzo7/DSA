@@ -23,13 +23,13 @@ public class ConstructBSTFromPreorderAndInorderTraversal {
     private static int preOrderIndex = 0;
 
     public static TreeNode buildTree_Optimised(int[] preorder, int[] inorder) {
-        return buildTree(preorder, inorder, 0, preorder.length - 1);
-//        Map<Integer, Integer> inorderIndexMap = new HashMap<>();
-//        for (int i = 0; i < inorder.length; i++) {
-//            inorderIndexMap.put(inorder[i], i);
-//        }
-//
-//        return buildTree_Optimised(preorder, inorderIndexMap, 0, preorder.length - 1);
+//        return buildTree(preorder, inorder, 0, preorder.length - 1);
+        Map<Integer, Integer> inorderIndexMap = new HashMap<>();
+        for (int i = 0; i < inorder.length; i++) {
+            inorderIndexMap.put(inorder[i], i);
+        }
+
+        return buildTree_Optimised(preorder, inorderIndexMap, 0, preorder.length - 1);
 
     }
 

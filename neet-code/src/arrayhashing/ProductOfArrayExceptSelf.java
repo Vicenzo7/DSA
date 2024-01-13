@@ -6,6 +6,7 @@ public class ProductOfArrayExceptSelf {
     public static void main(String[] args) {
         int[] nums = {1, 2, 3, 4};
         System.out.println(Arrays.toString(productExceptSelf(nums)));
+        System.out.println(Arrays.toString(productExceptSelf2(nums)));
     }
 
 //    public static int[] productExceptSelf(int[] nums) {
@@ -35,6 +36,36 @@ public class ProductOfArrayExceptSelf {
 //    }
 
 
+    public static int[] productExceptSelf2(int[] nums) {
+        int[] result = new int[nums.length];
+        int[] prefixArray = new int[nums.length];
+        int[] postfixArray = new int[nums.length];
+
+        for (int i = 0; i < nums.length; i++) {
+            if (i == 0) {
+                prefixArray[i] = nums[i];
+            } else {
+                prefixArray[i] = nums[i] * prefixArray[i - 1];
+            }
+        }
+
+        for (int i = nums.length - 1; i >= 0; i--) {
+            if (i == nums.length - 1) {
+                postfixArray[i] = nums[i];
+            } else {
+                postfixArray[i] = nums[i] * postfixArray[i + 1];
+            }
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            int prefix = (i > 0) ? prefixArray[i - 1] : 1;
+            int postfix = (i < nums.length - 1) ? postfixArray[i + 1] : 1;
+            result[i] = prefix * postfix;
+        }
+
+        return result;
+    }
+
     /* Prefix Postfix Method*/
     public static int[] productExceptSelf(int[] nums) {
         int[] result = new int[nums.length];
@@ -55,4 +86,6 @@ public class ProductOfArrayExceptSelf {
 
         return result;
     }
+
+
 }
