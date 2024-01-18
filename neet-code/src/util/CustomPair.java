@@ -1,13 +1,13 @@
 package util;
 
-public  class Pair<T, U> {
+public class CustomPair<T, U> {
     private T key;
     private U value;
 
-    public Pair() {
+    public CustomPair() {
     }
 
-    public Pair(T key, U value) {
+    public CustomPair(T key, U value) {
         this.key = key;
         this.value = value;
     }

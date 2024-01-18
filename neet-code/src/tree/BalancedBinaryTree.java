@@ -2,7 +2,7 @@ package tree;
 
 import tree.implementation.Tree;
 import tree.implementation.TreeNode;
-import util.Pair;
+import util.CustomPair;
 
 public class BalancedBinaryTree {
     public static void main(String[] args) {
@@ -19,16 +19,16 @@ public class BalancedBinaryTree {
     }
 
     // Pair <isBalanced,height>
-    private static Pair<Boolean, Integer> isBalancedFast(TreeNode root) {
+    private static CustomPair<Boolean, Integer> isBalancedFast(TreeNode root) {
         if (root == null) {
-            return new Pair<>(true, 0);
+            return new CustomPair<>(true, 0);
         }
 
-        Pair<Boolean, Integer> left = isBalancedFast(root.left);
-        Pair<Boolean, Integer> right = isBalancedFast(root.right);
+        CustomPair<Boolean, Integer> left = isBalancedFast(root.left);
+        CustomPair<Boolean, Integer> right = isBalancedFast(root.right);
         boolean difference = Math.abs(left.getValue() - right.getValue()) <= 1;
 
-        Pair<Boolean, Integer> ans = new Pair<>();
+        CustomPair<Boolean, Integer> ans = new CustomPair<>();
         ans.setValue(1 + Math.max(left.getValue(), right.getValue()));
         ans.setKey(left.getKey() && right.getKey() && difference);
 

@@ -2,7 +2,7 @@ package tree;
 
 import tree.implementation.Tree;
 import tree.implementation.TreeNode;
-import util.Pair;
+import util.CustomPair;
 
 public class DiameterOfBinaryTree {
     public static void main(String[] args) {
@@ -28,19 +28,19 @@ public class DiameterOfBinaryTree {
 
     // Pair<diameter,height>
     // TC = O(n)
-    private static Pair<Integer, Integer> diameterFast(TreeNode root) {
+    private static CustomPair<Integer, Integer> diameterFast(TreeNode root) {
         if (root == null) {
-            return new Pair<>(0, 0);
+            return new CustomPair<>(0, 0);
         }
 
-        Pair<Integer, Integer> left = diameterFast(root.left);
-        Pair<Integer, Integer> right = diameterFast(root.right);
+        CustomPair<Integer, Integer> left = diameterFast(root.left);
+        CustomPair<Integer, Integer> right = diameterFast(root.right);
 
         int option1 = left.getKey();
         int option2 = right.getKey();
         int option3 = left.getValue() + right.getValue();
 
-        Pair<Integer, Integer> ans = new Pair<>();
+        CustomPair<Integer, Integer> ans = new CustomPair<>();
         ans.setKey(Math.max(option1, Math.max(option2, option3)));
         ans.setValue(1 + Math.max(left.getValue(), right.getValue()));
         return ans;
