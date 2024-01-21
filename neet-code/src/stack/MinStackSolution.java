@@ -17,7 +17,7 @@ public class MinStackSolution {
             stack.add(val);
 
             if (stack.size() > 1) {
-                minStack.add(Math.min(minStack.get(stack.size() - 2), val));
+                minStack.add(Math.min(minStack.get(minStack.size() - 1), val));
             } else {
                 minStack.add(val);
             }
