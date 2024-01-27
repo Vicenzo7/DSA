@@ -11,6 +11,7 @@ public class LRUCache1 {
 
         In the constructor, the third boolean parameter specifies the ordering mode.
         If we set it to true, it will be in access order.
+        If we set it to false, it will be in insertion order.
         (https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html#LinkedHashMap-int-float-boolean-)
 
         By overriding removeEldestEntry in this way, we do not need to take care of it ourselves.

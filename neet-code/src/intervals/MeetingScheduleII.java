@@ -37,7 +37,7 @@ public class MeetingScheduleII {
 
 
     public static int minMeetingRoomsTwoPointer(List<Interval> intervals) {
-        if (intervals.size() == 0) {
+        if (intervals.isEmpty()) {
             return 0;
         }
 
