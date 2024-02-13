@@ -29,6 +29,9 @@ public class MergeKSortedList {
 
         ListNode listNode1 = mergeKLists(lists);
         printFromNode(listNode1);
+
+        ListNode listNode2 = mergeKListsOptimised(lists);
+        printFromNode(listNode2);
     }
 
     private static void printFromNode(ListNode listNode) {
@@ -101,5 +104,29 @@ public class MergeKSortedList {
 
         dummyHead.next = l1 != null ? l1 : l2;
         return head.next;
+    }
+
+
+
+    public static ListNode mergeKListsOptimised(ListNode[] lists) {
+        PriorityQueue<ListNode> queue = new PriorityQueue<>(Comparator.comparingInt(n -> n.val));
+        for (ListNode list : lists) {
+            if (list != null) {
+                queue.add(list);
+            }
+        }
+        ListNode mergedList = new ListNode();
+        ListNode curr = mergedList;
+        while (!queue.isEmpty()) {
+            ListNode temp = queue.remove();
+            curr.next = temp;
+            curr = curr.next;
+
+            if (temp.next != null) {
+                queue.add(temp.next);
+                temp.next = null;
+            }
+        }
+        return mergedList.next;
     }
 }

@@ -55,9 +55,9 @@ public class MinimumIntervalToIncludeEachQuery {
 
         int idx = 0;
         // iterate the sorted queries
-        for (int i = 0; i < sortedQueryIndex.size(); i++) {
+        for (Integer queryIndex : sortedQueryIndex) {
             // extract the query
-            int query = queries[sortedQueryIndex.get(i)];
+            int query = queries[queryIndex];
             // now add all the possible interval where interval[left] <= query
             while (idx < intervals.length && intervals[idx][0] <= query) {
                 queue.add(intervals[idx]);
@@ -70,7 +70,7 @@ public class MinimumIntervalToIncludeEachQuery {
             }
 
             // now fetch the result;
-            result[sortedQueryIndex.get(i)] = queue.isEmpty() ? -1 : getIntervalSize(queue.peek());
+            result[queryIndex] = queue.isEmpty() ? -1 : getIntervalSize(queue.peek());
         }
 
         return result;

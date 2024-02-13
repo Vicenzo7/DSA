@@ -7,6 +7,7 @@ public class PermutationPattern {
     public static void main(String[] args) {
         int[] nums = {1, 2, 3};
         System.out.println(permutationsRecursive(nums));
+        System.out.println(permutations("abc"));
     }
 
     // Time: O(n^2 * n!)
@@ -31,5 +32,36 @@ public class PermutationPattern {
             }
         }
         return resPrem;
+    }
+
+    public static List<String> permutations(String str) {
+        return helper(str);
+    }
+
+    private static List<String> helper(String str) {
+        if (str.isEmpty()) {
+            List<String> res = new ArrayList<>();
+            res.add("");
+            return res;
+        }
+        char initial = str.charAt(0); // first character
+        String remaining = str.substring(1);
+        List<String> allPermutation = new ArrayList<>();
+        List<String> permutation = helper(remaining);
+        for (String p : permutation) {
+            for (int i = 0; i < p.length() + 1; i++) {
+                allPermutation.add(charInsert(p, i, initial));
+            }
+        }
+
+        return allPermutation;
+    }
+
+    private static String charInsert(String s, int index, char initial) {
+        // add initial at position index
+
+        String first = s.substring(0, index);
+        String last = s.substring(index);
+        return first + initial + last;
     }
 }

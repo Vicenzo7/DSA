@@ -44,7 +44,7 @@ public class Search {
 TC = O(log(n)) -> if tree is balanced, else O(h) where h is the height
 ```
 
-**Why use BST instead of array ?**
+**Why use BST instead of sorted array ?**
 The main benefit of BST over sorted array is, we can insert and remove in log(n) time.
 
 ```

@@ -115,9 +115,11 @@ public class NQueens {
     }
 
     private static void addAns(char[][] board, List<List<String>> result) {
-        List<String> ans = Arrays.stream(board)
-                .map(String::valueOf)
-                .toList();
+        List<String> ans = new ArrayList<>();
+        for (char[] chars : board) {
+            String s = String.valueOf(chars);
+            ans.add(s);
+        }
         result.add(ans);
     }
 
