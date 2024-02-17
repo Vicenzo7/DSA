@@ -67,6 +67,12 @@ public class MergeKSortedList {
     //  Solution using Iterative Merge Sort
     //  Time Complexity:         O(n*log(k))
     //  Extra Space Complexity:  O(1)
+
+    /*
+        	The code snippet uses a bottom-up merge sort approach to merge the k sorted lists.
+        	The while loop runs log n times, where n is the number of lists. In each iteration of the while loop,
+        	the for loop merges two lists, which takes O(n) time. Therefore, the overall time complexity is O(n log n).
+    */
     public static ListNode mergeKLists(ListNode[] lists) {
         if (lists == null || lists.length == 0) {
             return null;
@@ -76,11 +82,9 @@ public class MergeKSortedList {
         int interval = 1;
 
         while (interval < size) {
-
             for (int i = 0; i < size - interval; i += interval * 2) {
                 lists[i] = mergeTwoList(lists[i], lists[i + interval]);
             }
-
             interval *= 2;
         }
 
@@ -107,6 +111,12 @@ public class MergeKSortedList {
     }
 
 
+    /*
+        The code uses a priority queue to merge k sorted lists.
+        The priority queue is initialized with a comparator that compares the values of the nodes.
+	    The time complexity of adding an element to the priority queue is O(logk), where k is the number of elements in the queue.
+        In the worst case, there can be a total of n elements across all the lists, so the overall time complexity is O(nlogk).
+    */
 
     public static ListNode mergeKListsOptimised(ListNode[] lists) {
         PriorityQueue<ListNode> queue = new PriorityQueue<>(Comparator.comparingInt(n -> n.val));

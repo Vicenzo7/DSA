@@ -15,6 +15,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Trie/code/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Graph/code/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/DynamicProgramming/code/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/out" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

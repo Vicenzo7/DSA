@@ -131,19 +131,4 @@ public class ValidTree {
         return true;
     }
 
-    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
-        int index = -1;
-        for (int i = 0; i < wordList.size(); i++) {
-            if (beginWord.equals(wordList.get(i))) {
-                index = i;
-                break;
-            }
-        }
-
-        if (index == -1) {
-            return 0;
-        }
-
-        return 5;
-    }
 }
