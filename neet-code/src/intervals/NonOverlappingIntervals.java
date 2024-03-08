@@ -1,9 +1,7 @@
 package intervals;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.List;
 
 public class NonOverlappingIntervals {
     public static void main(String[] args) {

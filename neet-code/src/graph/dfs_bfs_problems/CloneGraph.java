@@ -1,8 +1,11 @@
-package graph;
+package graph.dfs_bfs_problems;
 
 import graph.implementation.GraphNode;
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CloneGraph {
     public static void main(String[] args) {

@@ -1,8 +1,5 @@
 package BasicMath;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.Vector;
 
 //https://leetcode.com/problems/count-primes/

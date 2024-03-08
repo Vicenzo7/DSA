@@ -1,6 +1,7 @@
-package graph;
+package graph.dfs_bfs_problems;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 // border DFS
 public class PacificAtlanticWaterFlow {

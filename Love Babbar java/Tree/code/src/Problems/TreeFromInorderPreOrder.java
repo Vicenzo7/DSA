@@ -1,6 +1,5 @@
 package Problems;
 
-import javax.swing.tree.TreeNode;
 import java.util.*;
 
 public class TreeFromInorderPreOrder {

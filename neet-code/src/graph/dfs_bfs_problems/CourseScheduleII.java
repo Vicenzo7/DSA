@@ -1,4 +1,4 @@
-package graph;
+package graph.dfs_bfs_problems;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -62,7 +62,7 @@ public class CourseScheduleII {
             return false;
         }
 
-        // if course already visited and determind to be completed return true
+        // if the course is already visited and determined to be completed return true
         if (visit[course] == 2) {
             return true;
         }

@@ -1,4 +1,4 @@
-package graph;
+package graph.dfs_bfs_problems;
 
 import graph.implementation.GraphNode;
 

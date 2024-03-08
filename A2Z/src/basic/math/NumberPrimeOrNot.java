@@ -1,7 +1,5 @@
 package basic.math;
 
-import java.sql.Time;
-
 public class NumberPrimeOrNot {
     public static void main(String[] args) {
         int n = 19;

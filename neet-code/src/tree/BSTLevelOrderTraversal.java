@@ -1,6 +1,5 @@
 package tree;
 
-import tree.implementation.BinaryTree;
 import tree.implementation.Tree;
 import tree.implementation.TreeNode;
 

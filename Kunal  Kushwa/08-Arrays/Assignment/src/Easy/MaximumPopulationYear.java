@@ -1,5 +1,4 @@
 package Easy;
-import java.util.Arrays;
 
 //Maximum Population Year
 public class MaximumPopulationYear {

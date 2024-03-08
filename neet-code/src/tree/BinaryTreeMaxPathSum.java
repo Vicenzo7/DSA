@@ -3,8 +3,6 @@ package tree;
 import tree.implementation.Tree;
 import tree.implementation.TreeNode;
 
-import java.util.Map;
-
 public class BinaryTreeMaxPathSum {
     public static void main(String[] args) {
         Tree tree = new Tree();

@@ -1,9 +1,6 @@
 package arrayhashing;
 
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 
 public class ContainsDuplicate {
     public static void main(String[] args) {

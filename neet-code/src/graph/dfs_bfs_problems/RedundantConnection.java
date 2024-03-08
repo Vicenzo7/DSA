@@ -1,6 +1,8 @@
-package graph;
+package graph.dfs_bfs_problems;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class RedundantConnection {
     public static void main(String[] args) {

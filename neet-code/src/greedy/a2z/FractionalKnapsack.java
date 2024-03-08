@@ -1,8 +1,6 @@
 package greedy.a2z;
 
 import java.util.Arrays;
-import java.util.PriorityQueue;
-import java.util.Queue;
 
 public class FractionalKnapsack {
     public static void main(String[] args) {

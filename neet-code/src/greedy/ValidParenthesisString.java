@@ -51,16 +51,18 @@ public class ValidParenthesisString {
                 leftMax += 1;
             }
 
-            if (leftMax < 0) { // this means close bracket are more than close bracket
+            if (leftMax < 0) { // this means close bracket are more than open bracket
+                // Currently, don't have enough open parentheses to match close parentheses-> Invalid
+                // For example: ())(
                 return false;
             }
             // since we know open bracket are not less than close bracket from the above condition, we try to continue to find a valid solution
             // exist or not
             if (leftMin < 0) { // if this condition is not put then we will get true for s = (*)*(
-                leftMin = 0;
+                leftMin = 0;  // It's invalid if open parentheses count < 0 that's why leftMin can't be negative
             }
         }
-        return leftMin == 0;
+        return leftMin == 0; // Return true if you found `openCount == 0` in range [leftMin, leftMax]
     }
 
 }

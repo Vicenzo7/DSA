@@ -1,8 +1,6 @@
 package RecursionYT;
 
 
-import java.util.Arrays;
-
 public class ReverseAString {
     public static void main(String[] args) {
         String in = "Hello world";

@@ -2,12 +2,16 @@ package graph.algo;
 
 import java.util.*;
 
-public class TopologicalSort {
+public class  TopologicalSort {
 
     /*
         Q. Given a Direct Acyclic Graph (DAG) return valid topological ordering of the graph
-        GIven edges and n where node are from 1 to n
+        Given edges and n where node are from 1 to n
         Post order DFS and reverse the answer
+
+
+        Common Question Pattern for this Algorithm.
+        - If no solution exist return -1 or "", and if multiple solution exist return any one.
     */
 
     public static void main(String[] args) {

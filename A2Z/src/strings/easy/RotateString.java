@@ -1,8 +1,6 @@
 package strings.easy;
 
 
-import java.util.Arrays;
-
 public class RotateString {
     public static void main(String[] args) {
         String s = "abcde", goal = "eabcd";

@@ -1,8 +1,8 @@
 package heap_priorityqueue;
 
-import java.util.*;
-
 import util.CustomPair;
+
+import java.util.*;
 
 
 public class TaskScheduler {

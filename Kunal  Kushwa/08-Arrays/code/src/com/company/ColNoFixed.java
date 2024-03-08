@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.Arrays;
-
 public class ColNoFixed {
     public static void main(String[] args) {
         int[][] arr = {

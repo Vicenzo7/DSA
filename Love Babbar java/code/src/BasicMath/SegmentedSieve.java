@@ -1,7 +1,5 @@
 package BasicMath;
 
-import java.util.Arrays;
-
 public class SegmentedSieve {
     public static void main(String[] args) {
         int x=10;

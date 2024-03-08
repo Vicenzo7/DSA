@@ -1,7 +1,5 @@
 package strings.easy;
 
-import java.math.BigInteger;
-
 public class LargestOddNumberInString {
     public static void main(String[] args) {
         String num = "42076";

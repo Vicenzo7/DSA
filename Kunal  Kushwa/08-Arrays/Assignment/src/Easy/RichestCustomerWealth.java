@@ -1,7 +1,5 @@
 
 package Easy;
-import java.util.ArrayList;
-import java.util.Collections;
 
 public class RichestCustomerWealth {
     public static void main(String[] args) {

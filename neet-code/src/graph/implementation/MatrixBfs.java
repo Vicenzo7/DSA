@@ -6,8 +6,8 @@ import java.util.Deque;
 public class MatrixBfs {
 
     /*
-         Q. Find the length of the shortest path from top left of the grid to bottom right
-
+         Q. Find the length of the shortest path from top left of the grid to
+         bottom right
      */
     public static void main(String[] args) {
         int[][] grid = {

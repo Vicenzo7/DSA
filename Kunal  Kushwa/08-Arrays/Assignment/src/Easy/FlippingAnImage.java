@@ -1,7 +1,6 @@
 package Easy;
-import java.util.ArrayList;
+
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class FlippingAnImage {
     public static void main(String[] args) {

@@ -1,7 +1,5 @@
 package binarysearch.oneDArray;
 
-import java.util.Map;
-
 public class RowWithMax1s {
     public static void main(String[] args) {
 //        int[][] matrix = {{0, 1, 1, 1},

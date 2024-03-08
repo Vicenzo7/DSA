@@ -1,6 +1,5 @@
 //Determine Whether Matrix Can Be Obtained By Rotation
 package Easy;
-import java.util.Arrays;
 
 public class Rotationby90 {
     public static void main(String[] args) {

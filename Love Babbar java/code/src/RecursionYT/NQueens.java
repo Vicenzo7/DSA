@@ -3,7 +3,6 @@ package RecursionYT;
 //https://leetcode.com/problems/n-queens/
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class NQueens {
     public static void main(String[] args) {

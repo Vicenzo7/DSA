@@ -2,8 +2,7 @@ out/
 .idea/sonarlint/
 
 
-/neet-code/src/blackBuck/*
-/neet-code/src/uniCard/*
+/neet-code/src/company/
 /.obsidian
 .
 /Excalidraw

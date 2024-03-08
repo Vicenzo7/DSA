@@ -1,6 +1,8 @@
 package binarysearch.bsInSearchSpace;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class MinimizeMaxDistanceToGasStation {
     public static void main(String[] args) {

@@ -1,7 +1,5 @@
 package EasyString;
 
-import java.util.Arrays;
-
 public class SortingTheSentence {
     public static void main(String[] args) {
         String s = "is2 sentence4 This1 a3";

@@ -1,6 +1,5 @@
 //Find N Unique Integers Sum up to Zero
 package Easy;
-import java.util.Arrays;
 
 public class IntegersSumuptoZero {
     public static void main(String[] args) {

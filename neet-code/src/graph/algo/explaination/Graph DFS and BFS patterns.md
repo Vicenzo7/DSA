@@ -140,7 +140,7 @@ for (int row = 0; row < ROWS; row++) {
 }
 ```
 
-## BFS in deque adding specific elements
+## BFS: Adding specific elements in deque prior and then doing bfs
 
 ```
 private static int bfs(int[][] grid) {  

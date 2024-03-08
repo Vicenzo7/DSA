@@ -1,7 +1,5 @@
 package BSTProblems;
 
-import java.util.ArrayList;
-
 public class LCAofBinarySearchTree {
 
     Node root;

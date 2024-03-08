@@ -1,7 +1,6 @@
 package HardBS;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class BookAllocation {
     public static void main(String[] args) {
