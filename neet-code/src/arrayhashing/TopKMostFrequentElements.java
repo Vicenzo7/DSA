@@ -62,7 +62,7 @@ public class TopKMostFrequentElements {
             frequencyCount.put(num, frequencyCount.getOrDefault(num, 0) + 1);
         }
 
-        List<List<Integer>> frequencyList = new ArrayList<>(nums.length + 1);
+        List<List<Integer>> frequencyList = new ArrayList<>();
         for (int i = 0; i <= nums.length; i++) {
             frequencyList.add(new ArrayList<>());
         }

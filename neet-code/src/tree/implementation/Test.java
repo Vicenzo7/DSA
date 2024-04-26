@@ -2,7 +2,7 @@ package tree.implementation;
 
 public class Test {
     public static void main(String[] args) {
-        BinaryTree tree = new BinaryTree();
+        BinarySearchTree tree = new BinarySearchTree();
         tree.insert(5);
         tree.insert(3);
         tree.insert(7);

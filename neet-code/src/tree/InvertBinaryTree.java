@@ -1,11 +1,11 @@
 package tree;
 
-import tree.implementation.BinaryTree;
+import tree.implementation.BinarySearchTree;
 import tree.implementation.TreeNode;
 
 public class InvertBinaryTree {
     public static void main(String[] args) {
-        BinaryTree tree = new BinaryTree();
+        BinarySearchTree tree = new BinarySearchTree();
         tree.insert(4);
         tree.insert(2);
         tree.insert(7);

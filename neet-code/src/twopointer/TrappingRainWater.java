@@ -10,33 +10,27 @@ public class TrappingRainWater {
     /*
 
     Important Equation = to finding how many block of water can be stored at current index
-    min(max height at left afet i,max height at right after i) - height[i]
+    min(max height at left after i,max height at right after i) - height[i]
      */
 
     // Solution 1:
 //    public static int trap(int[] height) {
 //        // TC = O(n)  SC = O(n)
-//        int[] maxLeftHeight = new int[height.length];
-//        int[] maxRightHeight = new int[height.length];
 //
-//        int maxHeight = 0;
-//        for (int i = 0; i < height.length; i++) {
-//            if (i == 0) {
-//                maxLeftHeight[i] = 0;
-//            } else {
-//                maxHeight = Math.max(maxHeight, height[i - 1]);
-//                maxLeftHeight[i] = maxHeight;
-//            }
+//        int n = height.length;
+//        int[] maxLeftHeight = new int[n];
+//        int[] maxRightHeight = new int[n];
+//
+//        int maxLeft = 0;
+//        for (int i = 0; i < n; i++) {
+//            maxLeftHeight[i] = maxLeft;
+//            maxLeft = Math.max(maxLeft, height[i]);
 //        }
 //
-//        maxHeight = 0;
-//        for (int i = height.length - 1; i >= 0; i--) {
-//            if (i == height.length - 1) {
-//                maxRightHeight[i] = 0;
-//            } else {
-//                maxHeight = Math.max(maxHeight, height[i + 1]);
-//                maxRightHeight[i] = maxHeight;
-//            }
+//        int maxRight = 0;
+//        for (int i = n - 1; i >= 0; i--) {
+//            maxRightHeight[i] = maxRight;
+//            maxRight = Math.max(maxRight, height[i]);
 //        }
 //
 //        int totalUnitOfWaterStored = 0;

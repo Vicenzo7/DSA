@@ -30,6 +30,13 @@ public class  TopologicalSort {
         System.out.println(topologicalSort(edges, n));
     }
 
+
+    /*
+        The time complexity of the topological sort algorithm using Depth First Search (DFS) is O(V + E),
+        where V is the number of vertices and E is the number of edges in the graph. This is because the
+        DFS algorithm visits each vertex and edge once,and the recursive calls are made for each neighbor of a vertex.
+
+    */
     public static List<Integer> topologicalSort(int[][] edges, int n) {
         Map<Integer, List<Integer>> sourceToDestinationMap = new HashMap<>();
         for (int i = 1; i <= n; i++) {
@@ -81,6 +88,4 @@ public class  TopologicalSort {
         recursionStack.remove(source);
         return false;
     }
-
-
 }

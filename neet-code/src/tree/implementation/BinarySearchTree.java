@@ -4,11 +4,11 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Stack;
 
-public class BinaryTree {
+public class BinarySearchTree {
 
     public TreeNode root;
 
-    public BinaryTree() {
+    public BinarySearchTree() {
         this.root = null;
     }
 

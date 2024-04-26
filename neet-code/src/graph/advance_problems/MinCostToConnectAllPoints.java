@@ -12,11 +12,9 @@ public class MinCostToConnectAllPoints {
 
 
     public static int minCostConnectPoints(int[][] points) {
-
-
         int minimumCost = 0;
-
         Map<Integer, List<int[]>> adjacencyList = new HashMap<>();
+
         for (int source = 0; source < points.length; source++) {
             int[] node1 = points[source];
             for (int destination = 0; destination < points.length; destination++) {

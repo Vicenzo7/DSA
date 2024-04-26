@@ -1,14 +1,14 @@
 package tree;
 
-import tree.implementation.BinaryTree;
+import tree.implementation.BinarySearchTree;
 import tree.implementation.TreeNode;
 
 public class ConvertSortedArrayToBST {
     public static void main(String[] args) {
         int[] nums = {-10,-3,0,5,9};
         TreeNode x = sortedArrayToBST(nums);
-        BinaryTree binaryTree = new BinaryTree();
-        binaryTree.bfsTraversal(x);
+        BinarySearchTree binarySearchTree = new BinarySearchTree();
+        binarySearchTree.bfsTraversal(x);
     }
 
     public static TreeNode sortedArrayToBST(int[] nums) {

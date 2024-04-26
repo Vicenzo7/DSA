@@ -1,11 +1,11 @@
 package tree;
 
-import tree.implementation.BinaryTree;
+import tree.implementation.BinarySearchTree;
 import tree.implementation.TreeNode;
 
 public class LowestCommonAncestorOfBST {
     public static void main(String[] args) {
-        BinaryTree bst = new BinaryTree();
+        BinarySearchTree bst = new BinarySearchTree();
         bst.insert(6);
         bst.insert(2);
         bst.insert(8);
@@ -18,10 +18,10 @@ public class LowestCommonAncestorOfBST {
 
         bst.bfsTraversal();
 
-        BinaryTree p = new BinaryTree();
+        BinarySearchTree p = new BinarySearchTree();
         p.insert(2);
 
-        BinaryTree q = new BinaryTree();
+        BinarySearchTree q = new BinarySearchTree();
         q.insert(8);
 
         TreeNode treeNode = lowestCommonAncestor(bst.root, p.root, q.root);

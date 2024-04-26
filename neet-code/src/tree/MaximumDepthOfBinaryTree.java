@@ -1,6 +1,6 @@
 package tree;
 
-import tree.implementation.BinaryTree;
+import tree.implementation.BinarySearchTree;
 import tree.implementation.TreeNode;
 
 import java.util.ArrayDeque;
@@ -8,7 +8,7 @@ import java.util.Deque;
 
 public class MaximumDepthOfBinaryTree {
     public static void main(String[] args) {
-        BinaryTree tree = new BinaryTree();
+        BinarySearchTree tree = new BinarySearchTree();
         tree.insert(3);
         tree.insert(9);
         tree.insert(20);

@@ -57,6 +57,9 @@ If at any point you encounter an edge whose endpoints already belong to the same
 The Union-Find algorithm efficiently handles these operations and is particularly useful for detecting cycles in graphs.
 
 ```
+// TC = O(log(n))
+
+
 static int[] parent; // store root node  
 static int[] rank; // size of the tree  
   

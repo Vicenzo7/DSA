@@ -85,6 +85,4 @@ public class KruskalsAlgorithm {
 
         return true; // union done
     }
-
-
 }

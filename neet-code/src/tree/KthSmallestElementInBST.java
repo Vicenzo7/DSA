@@ -1,6 +1,6 @@
 package tree;
 
-import tree.implementation.BinaryTree;
+import tree.implementation.BinarySearchTree;
 import tree.implementation.TreeNode;
 
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.Stack;
 
 public class KthSmallestElementInBST {
     public static void main(String[] args) {
-        BinaryTree bst = new BinaryTree();
+        BinarySearchTree bst = new BinarySearchTree();
         bst.insert(5);
         bst.insert(3);
         bst.insert(6);
