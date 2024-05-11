@@ -41,8 +41,9 @@ public class ReconstructItinerary {
             // check whether we can go to other airports from this airport
             // if we can we go to that airport, or else we add this airport to our itinerary
             // list.
-            if (!adjacencyList.getOrDefault(airport, new PriorityQueue<>()).isEmpty()) {
-                stack.push(adjacencyList.get(airport).poll());
+            PriorityQueue<String> destinations = adjacencyList.getOrDefault(airport, new PriorityQueue<>());
+            if (!destinations.isEmpty()) {
+                stack.push(destinations.poll());
             } else {
                 itinerary.addFirst(stack.pop());
             }

@@ -18,7 +18,6 @@ public class NumberOfIsland {
                 {'0', '0', '1', '0', '0'},
                 {'0', '0', '0', '1', '1'}
         };
-        System.out.println(numIslandsBFS(grid2));
         System.out.println(numIslands(grid2));
     }
 
@@ -32,6 +31,7 @@ public class NumberOfIsland {
                 if (grid[row][col] == '1' && visit[row][col] == 0) {
                     island++;
                     dfs(grid, row, col, visit);
+//                    bfs(grid, row, col, visit);
                 }
             }
         }
@@ -54,24 +54,6 @@ public class NumberOfIsland {
         dfs(grid, row + 1, col, visit); // down
     }
 
-    private static int numIslandsBFS(char[][] grid) {
-        int ROWS = grid.length;
-        int COLS = grid[0].length;
-        int[][] visit = new int[ROWS][COLS];
-        int island = 0;
-
-        for (int row = 0; row < ROWS; row++) {
-            for (int col = 0; col < COLS; col++) {
-                // is island and not visited
-                if (grid[row][col] == '1' && visit[row][col] == 0) {
-                    island += 1;
-                    bfs(grid, row, col, visit);
-                }
-            }
-        }
-
-        return island;
-    }
 
     private static void bfs(char[][] grid, int row, int col, int[][] visit) {
         int ROWS = grid.length;

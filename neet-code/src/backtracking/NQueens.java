@@ -27,7 +27,7 @@ public class NQueens {
         Set<Integer> colOccupied = new HashSet<>();
         Set<Integer> up_leftDiagonal = new HashSet<>(); // row - col
         Set<Integer> up_rightDiagonal = new HashSet<>(); // row + col
-//
+
         dfs_Optimised(0, n, board, colOccupied, up_leftDiagonal, up_rightDiagonal, result);
         return result;
     }

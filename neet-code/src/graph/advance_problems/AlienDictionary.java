@@ -14,8 +14,6 @@ public class AlienDictionary {
 
     public static String alienDictionary(String[] words) {
         Map<String, Set<String>> adjacencyList = new HashMap<>();
-
-
         for (int i = 0; i < words.length - 1; i++) {
             // take two pairs or words
             String w1 = words[i];
