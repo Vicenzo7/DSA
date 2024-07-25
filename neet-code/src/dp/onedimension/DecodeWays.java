@@ -5,23 +5,23 @@ import java.util.Map;
 
 public class DecodeWays {
     public static void main(String[] args) {
-        String s = "";
+        String s = "226";
         System.out.println(numDecodings(s));
     }
 
 
     public static int numDecodings(String s) {
-        System.out.println(dp(s));
+//        System.out.println(dp(s));
 
         Map<Integer, Integer> cache = new HashMap<>();
-        cache.put(s.length(), 1);
+//        cache.put(s.length(), 1);
         return memoization(0, s, cache);
     }
 
 
     // TC = O(n) SC = O(1)
     private static int dp(String s) {
-        int twoBack = 1; // emptyString
+        int twoBack = 1; // number of ways to decode empty string
         int oneBack = s.charAt(0) == '0' ? 0 : 1; // if 0 no count
         int current = oneBack;
         for (int i = 2; i < s.length() + 1; i++) {
@@ -45,6 +45,11 @@ public class DecodeWays {
     // TC = O(n) SC = O(n)
 
     public static int memoization(int i, String s, Map<Integer, Integer> cache) {
+
+        if (i == s.length()) {
+            return 1;
+        }
+
         if (cache.containsKey(i)) {
             return cache.get(i);
         }

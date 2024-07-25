@@ -51,7 +51,7 @@ public class LongestIncreasingSubsequence {
         }
 
 
-        if (cache[index][previousIndex + 1] != -1) {
+        if (cache[index] [previousIndex + 1] != -1) {
             return cache[index][previousIndex + 1]; // previousIndex+1 because previousIndex is -1
         }
 

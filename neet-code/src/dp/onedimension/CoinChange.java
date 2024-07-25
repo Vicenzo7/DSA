@@ -15,8 +15,8 @@ public class CoinChange {
 
         System.out.println(coinChange(coins, amount));
         System.out.println(bruteForce(coins, amount));
-        int[] cache = new int[amount + 1];
-        Arrays.fill(cache, -1);
+        Integer[] cache = new Integer[amount + 1];
+
         System.out.println(memoization(coins, amount, cache));
         System.out.println(memoizationWithMap(coins, amount, new HashMap<>()));
     }
@@ -57,19 +57,23 @@ public class CoinChange {
         return cc < 0 ? -1 : cc + 1;
     }
 
-
-    private static int memoization(int[] coins, int amount, int[] cache) {
-        if (amount == 0) return 0;
-        if (amount < 0) return -1;
-        if (cache[amount] > -1) {
+    static
+    private int memoization(int[] coins, int amount, Integer[] cache) {
+        if (amount == 0)
+            return 0;
+        if (amount < 0)
+            return -1;
+        if (cache[amount] != null) {
             return cache[amount];
         }
-        int cc = -1;
-        for (int i : coins) {
-            int coin = memoization(coins, amount - i, cache);
-            if (coin >= 0) cc = cc < 0 ? coin : Math.min(cc, coin);
+        int minCoin = -1;
+        for (int coin : coins) {
+            int result = memoization(coins, amount - coin, cache);
+            if (result >= 0) {
+                minCoin = minCoin < 0 ? result : Math.min(minCoin, result);
+            }
         }
-        cache[amount] = cc < 0 ? -1 : cc + 1;
+        cache[amount] = minCoin < 0 ? -1 : minCoin + 1;
         return cache[amount];
     }
 

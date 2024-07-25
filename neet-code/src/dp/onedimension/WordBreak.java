@@ -1,8 +1,6 @@
 package dp.onedimension;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class WordBreak {
     public static void main(String[] args) {
@@ -23,7 +21,9 @@ public class WordBreak {
     public static boolean wordBreak(String s, List<String> wordDict) {
 //        return bruteForce(s, wordDict);
         return memoization(s, wordDict, new HashMap<>());
+//        return memoization(s, 0, new HashSet<>(wordDict), new Boolean[s.length()]);
     }
+
 
     private static boolean memoization(String s, List<String> wordDict, Map<String, Boolean> cache) {
         if (cache.containsKey(s)) {
@@ -45,6 +45,30 @@ public class WordBreak {
         }
         cache.put(s, false);
         return false;
+    }
+
+
+
+    // can use for word concatenation
+
+    private static boolean memoization(String word, int start, Set<String> wordDict, Boolean[] cache) {
+
+        if (start == word.length()) {
+            return true;
+        }
+
+        if (cache[start] != null) {
+            return cache[start];
+        }
+
+        for (int end = start + 1; end <= word.length(); end++) {
+            if (wordDict.contains(word.substring(start, end))
+                    && memoization(word, end, wordDict, cache)) {
+                return cache[start] = true;
+            }
+        }
+
+        return cache[start] = false;
     }
 
     private static boolean bruteForce(String s, List<String> wordDict) {

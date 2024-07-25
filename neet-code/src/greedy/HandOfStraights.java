@@ -23,18 +23,20 @@ public class HandOfStraights {
 
         Arrays.sort(hand);
         for (int card : hand) {
-            if (cardFrequencyMap.get(card) <= 0) {
+            Integer cardCount = cardFrequencyMap.get(card);
+            if (cardCount <= 0) {
                 continue;
             }
             for (int i = 1; i < groupSize; i++) {
-                Integer count = cardFrequencyMap.getOrDefault(card + i, 0);
-                if (count > 0) {
-                    cardFrequencyMap.put(card + i, count - 1);
+                int sequenceCard = card + i;
+                Integer sequenceCardCount = cardFrequencyMap.getOrDefault(sequenceCard, 0);
+                if (sequenceCardCount > 0) {
+                    cardFrequencyMap.put(sequenceCard, sequenceCardCount - 1);
                 } else {
                     return false;
                 }
             }
-            cardFrequencyMap.put(card, cardFrequencyMap.get(card) - 1);
+            cardFrequencyMap.put(card, cardCount - 1);
         }
 
         return true;

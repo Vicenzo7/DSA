@@ -2,7 +2,7 @@ package dp.onedimension;
 
 public class LongestPalindromicSubstring {
     public static void main(String[] args) {
-        // Treat ever character as a middle element and expand it from left adn right to
+        // Treat ever character as a middle element and expand it from left and right to
         // check a bigger palindrome substring can be formed
         // once treat the character as a middle element for a odd length string and once
         // treat it for even length string

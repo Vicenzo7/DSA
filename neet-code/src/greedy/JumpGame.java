@@ -13,7 +13,8 @@ public class JumpGame {
         int goal = nums.length - 1;
         for (int i = nums.length - 1; i >= 0; i--) {
             // we only shift our goal when we can jump from that index and reach the goal position
-            if (i + nums[i] >= goal) {
+            int jump = i + nums[i];
+            if (jump >= goal) {
                 goal = i;
             }
         }

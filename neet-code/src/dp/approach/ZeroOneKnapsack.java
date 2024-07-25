@@ -18,8 +18,10 @@ public class ZeroOneKnapsack {
         int capacity = 8;
 
         System.out.println(optimizedDp(profit, weight, capacity));
+        System.out.println(dp(profit, weight, capacity));
         System.out.println(dfs(profit, weight, capacity));
     }
+
     // Brute force Solution
     // Time: O(2^n), Space: O(n)
     // Where n is the number of items.
@@ -99,34 +101,30 @@ public class ZeroOneKnapsack {
 
 
         int N = profit.size(), M = capacity;
-        List<Integer[]> dp = new ArrayList<>();
-        for (int row = 0; row < N; row++) {
-            dp.add(row, new Integer[M + 1]);
-            Arrays.fill(dp.get(row), 0);
-        }
+        int[][] dp = new int[N][M + 1];
 
         // Fill the first column and row to reduce edge cases
         for (int i = 0; i < N; i++) {
-            dp.get(i)[0] = 0;
+            dp[i][0] = 0;
         }
         for (int c = 0; c <= M; c++) {
             if (weight.get(0) <= c) {
-                dp.get(0)[c] = profit.get(0);
+                dp[0][c] = profit.get(0);
             }
         }
 
         for (int i = 1; i < N; i++) {
             for (int c = 1; c <= M; c++) {
                 // skipping the current item means, we might or might not have picked the previous one
-                int skip = dp.get(i - 1)[c];
+                int skip = dp[i - 1][c];
                 int include = 0;
                 if (c - weight.get(i) >= 0) {
-                    include = profit.get(i) + dp.get(i - 1)[c - weight.get(i)];
+                    include = profit.get(i) + dp[i - 1][c - weight.get(i)];
                 }
-                dp.get(i)[c] = Math.max(include, skip);
+                dp[i][c] = Math.max(include, skip);
             }
         }
-        return dp.get(N - 1)[M];
+        return dp[N - 1][M];
     }
 
 

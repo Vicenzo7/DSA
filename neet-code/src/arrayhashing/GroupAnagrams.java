@@ -23,9 +23,7 @@ public class GroupAnagrams {
             char[] charArray = str.toCharArray();
             Arrays.sort(charArray);
             String sortedGroup = new String(charArray);
-            List<String> anagramGroupList = map.getOrDefault(sortedGroup, new ArrayList<>());
-            anagramGroupList.add(str);
-            map.put(sortedGroup, anagramGroupList);
+            map.computeIfAbsent(sortedGroup, k -> new ArrayList<>()).add(str);
         }
 
         return new ArrayList<>(map.values());

@@ -1,4 +1,4 @@
-package dp.pattern.game_stratergy;
+package dp.pattern.game_theory;
 
 public class StoneGame {
     public static void main(String[] args) {

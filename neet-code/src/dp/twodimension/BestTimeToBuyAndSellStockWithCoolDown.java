@@ -25,7 +25,7 @@ public class BestTimeToBuyAndSellStockWithCoolDown {
     public static int maxProfit(int[] prices) {
 
 //        return bruteForce(0, false, prices);
-        return memoization(0, false, prices, new HashMap<>());
+        return memoization(0, false, prices, new Integer[2][prices.length + 1]);
     }
 
     private static int bruteForce(int index, boolean haveStock, int[] prices) {
@@ -49,14 +49,15 @@ public class BestTimeToBuyAndSellStockWithCoolDown {
         return Math.max(option1, option2);
     }
 
-    private static int memoization(int index, boolean haveStock, int[] prices, Map<String, Integer> cache) {
+    private static int memoization(int index, boolean haveStock, int[] prices, Integer[][] cache) {
 
         if (index >= prices.length) {
             return 0;
         }
 
-        if (cache.containsKey(String.valueOf(index) + haveStock)) {
-            return cache.get(String.valueOf(index) + haveStock);
+        int turnIndex = haveStock ? 0 : 1;
+        if (cache[turnIndex][index] != null) {
+            return cache[turnIndex][index];
         }
 
         int option1;
@@ -71,7 +72,6 @@ public class BestTimeToBuyAndSellStockWithCoolDown {
             option2 = memoization(index + 1, false, prices, cache); // skip
         }
 
-        cache.put(String.valueOf(index) + haveStock, Math.max(option1, option2));
-        return cache.get(String.valueOf(index) + haveStock);
+        return cache[turnIndex][index] = Math.max(option1, option2);
     }
 }

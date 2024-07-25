@@ -11,7 +11,7 @@
 
 1. Create a window, left = 0, right = 0, also need an array to track of character frequency 
 2.  While iterating store the frequency of every character
-3. Also compute maxCharacterCount till now `maxCharCount = max(maxCharCount - array[s.charAt(right) -'A']++)`. Max char count can also be calculated by running a for loop around the frequency array as its size is fixed and will be always constant.
+3. Also compute maxCharacterCount till now `maxCharCount = max(maxCharCount , array[s.charAt(right) -'A']++)`. Max char count can also be calculated by running a for loop around the frequency array as its size is fixed and will be always constant.
 4. Now check if window is of proper size `right - left + 1` = window size
 	1. `windowSize - maxCharacterCount > k` = mean not a proper window, means this substring requires more then k replacement which we cannot have
 	2.  So to have a proper window, increment the left pointer and before incrementing reduce the frequency count of the character which is at the left pointer.

@@ -25,10 +25,10 @@ public class HouseRobberII {
         */
 
         // Rob the first house and skip the last house
-        int maxRob1 = simpleHouseRob(nums, 0, n - 2);
+        int maxRob1 = simpleHouseRob(nums, 0, n - 1);
 
         // Skip the first house and rob the last house
-        int maxRob2 = simpleHouseRob(nums, 1, n - 1);
+        int maxRob2 = simpleHouseRob(nums, 1, n);
 
         return Math.max(maxRob1, maxRob2);
     }
@@ -37,7 +37,7 @@ public class HouseRobberII {
         int rob1 = 0;// Maximum amount robbed with considering the current house
         int rob2 = 0; // Maximum amount robbed without considering the current house
 
-        for (int i = start; i <= end; i++) {
+        for (int i = start; i < end; i++) {
             int moneyInHouse = nums[i];
             int maxCash = Math.max(moneyInHouse + rob1, rob2);
             rob1 = rob2;

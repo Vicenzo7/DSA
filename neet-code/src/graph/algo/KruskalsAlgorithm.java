@@ -47,7 +47,7 @@ public class KruskalsAlgorithm {
         }
 
         List<int[]> mst = new ArrayList<>();
-        while (mst.size() < nodes - 1) {// this condition, because for n edges there must be n-1 edges to form a graph without cycle
+        while (mst.size() < nodes - 1) {// this condition, because for n nodes there must be n-1 edges to form a graph without cycle
             int[] nodeInfo = minHeap.poll();
             int source = nodeInfo[1];
             int destination = nodeInfo[2];
