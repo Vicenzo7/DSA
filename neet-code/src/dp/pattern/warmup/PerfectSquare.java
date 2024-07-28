@@ -75,7 +75,7 @@ public class PerfectSquare {
         int count = 1;
         while (count * count <= n) {
             int square = count * count;
-            // calculate how many square are required to for the target
+            // calculate how many square are required to form the i
             for (int i = square; i < n + 1; i++) {
                 dp[i] = Math.min(dp[i - square] + 1, dp[i]);
             }

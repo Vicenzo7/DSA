@@ -102,12 +102,8 @@ public class MinimumCostForTickets {
 
 
     private static int dp(int[] days, int[] costs) {
-        Set<Integer> travelDays = new HashSet<>();
-        for (int day : days) {
-            travelDays.add(day);
-        }
 
-
+        Set<Integer> travelDays = new HashSet<>(Arrays.stream(days).boxed().toList());
         int[] dp = new int[366];
         for (int currentDay = 1; currentDay <= days[days.length - 1]; currentDay++) {
 

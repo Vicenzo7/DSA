@@ -2,7 +2,7 @@ package dp.onedimension;
 
 public class MaximumProductSubarray {
     public static void main(String[] args) {
-        int[] nums = {2, 3, -2, 4};
+        int[] nums = {0,10,10,10,10,10,10,10,10,10,-10,10,10,10,10,10,10,10,10,10,0};
 
         System.out.println(maxProduct(nums));
         System.out.println(maxProductOptimised(nums));

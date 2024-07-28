@@ -12,15 +12,7 @@ public class LongestIncreasingSubsequence {
 
     public static int lengthOfLIS(int[] nums) {
 //        return bruteForce(0, nums, -1);
-
-//         two dp since two variables are chancing
-//        int[][] cache = new int[nums.length][nums.length + 1];
-//        for (int[] rows : cache) {
-//            Arrays.fill(rows, -1);
-//        }
-//        return memoization(0, nums, -1, cache);
-
-
+//        return memoization(0, nums, -1, new Integer[nums.length][nums.length]);
         return dp(nums);
     }
 
@@ -45,13 +37,13 @@ public class LongestIncreasingSubsequence {
         return Arrays.stream(cache).max().orElse(0);
     }
 
-    private static int memoization(int index, int[] nums, int previousIndex, int[][] cache) {
+    private static int memoization(int index, int[] nums, int previousIndex, Integer[][] cache) {
         if (index == nums.length) {
             return 0;
         }
 
 
-        if (cache[index] [previousIndex + 1] != -1) {
+        if (cache[index][previousIndex + 1] != -1) {
             return cache[index][previousIndex + 1]; // previousIndex+1 because previousIndex is -1
         }
 

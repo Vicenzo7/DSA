@@ -42,40 +42,40 @@ public class KnightDialer {
     };
 
     static public int knightDialer(int n) {
-        int[][] cache = new int[5001][10];
-        return moreOptimised(n, new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, cache);
+        Integer[][] cache = new Integer[5001][10];
+        int total = 0;
+        for (int i = 0; i < 10; i++) {
+            total = (total + dfs(n - 1, i, cache)) % MOD;
+        }
 
+        return total;
 
-//        Map<String, Integer> dp = new HashMap<>();
-//        int total = 0;
-//        for (int i = 0; i < 10; i++) {
-//            total = (total + dfs(n - 1, i, dp)) % MOD;
-//        }
-//        return total;
+//        int[][] cache = new int[5001][10];
+//        return moreOptimised(n, new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, cache);
     }
 
-
-
-    static private int dfs(int n, int currentDialed, Map<String, Integer> dp) {
-        if (n == 0) { // there are 1 way to create a number of length 0, by not picking
-            return 1;
+    private static int dfs(int n, int currentDialed, Integer[][] cache) {
+        if (n == 0) {
+            return 1; // 1 way to create a phone number of length 0
         }
+
         if (currentDialed == 5) {
             return 0;
         }
 
-        if (dp.containsKey(n + "-" + currentDialed)) {
-            return dp.get(n + "-" + currentDialed);
+        if (cache[n][currentDialed] != null) {
+            return cache[n][currentDialed];
         }
 
         int[] possibleLanding = mapping[currentDialed];
         int total = 0;
-        for (Integer i : possibleLanding) {
-            total = (total + dfs(n - 1, i, dp)) % MOD;
+        for (int i : possibleLanding) {
+            total = (total + dfs(n - 1, i, cache)) % MOD;
         }
-        dp.put(n + "-" + currentDialed, total);
-        return total;
+
+        return cache[n][currentDialed] = total;
     }
+
 
      /*
 

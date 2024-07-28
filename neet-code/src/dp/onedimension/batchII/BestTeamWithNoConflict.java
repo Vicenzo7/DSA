@@ -23,16 +23,8 @@ public class BestTeamWithNoConflict {
             ageScores[i][1] = scores[i];
         }
 
-//        ageScores.sort(
-//                (a, b) -> {
-//                    int ageComparison = Integer.compare(a[0], b[0]);
-//                    return ageComparison != 0 ? ageComparison : Integer.compare(a[1], b[1]);
-//                });
-
-
         // sorting based on score and pair in ascending order
         Arrays.sort(ageScores, Comparator.comparingInt((int[] a) -> a[0]).thenComparingInt(a -> a[1]));
-
 //        return bruteForce(0, -1, ageScores);
         int[][] cache = new int[scores.length][scores.length + 1];
         for (int[] row : cache) {
