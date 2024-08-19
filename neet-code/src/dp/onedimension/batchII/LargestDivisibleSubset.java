@@ -107,49 +107,50 @@ public class LargestDivisibleSubset {
         if (cache.containsKey(i)) {
             return new ArrayList<>(cache.get(i));
         }
-        List<Integer> result = new ArrayList<>();
-        result.add(nums[i]);
+        List<Integer> ithCurrentList = new ArrayList<>();
+        ithCurrentList.add(nums[i]);
 
         // Explore all possible elements to form a subset.
         for (int j = i + 1; j < nums.length; j++) {
             if (nums[j] % nums[i] == 0) {
-                List<Integer> temp = memoizationOptimised(j, nums, cache);
+                List<Integer> jthList = memoizationOptimised(j, nums, cache);
                 // Prepend nums[i] and create a new list.
-                List<Integer> candidate = new ArrayList<>(temp);
-                candidate.add(0, nums[i]);
+                List<Integer> ithNewList = new ArrayList<>(jthList);
+                ithNewList.add(0, nums[i]);
 
-                if (candidate.size() > result.size()) {
-                    result = candidate;
+                if (ithNewList.size() > ithCurrentList.size()) {
+                    ithCurrentList = ithNewList;
                 }
             }
         }
-        cache.put(i, result);
-        return result;
+        cache.put(i, ithCurrentList);
+        return ithCurrentList;
     }
 
     static
     private List<Integer> dp(int[] nums) {
-        List<List<Integer>> dp = new ArrayList<>();
+        List<List<Integer>> cache = new ArrayList<>();
+        // every element is a subset
         for (int num : nums) {
-            List<Integer> temp = new ArrayList<>();
-            temp.add(num);
-            dp.add(temp);
+            cache.add(List.of(num));
         }
 
         List<Integer> result = new ArrayList<>();
-
         for (int i = nums.length - 1; i >= 0; i--) {
             for (int j = i + 1; j < nums.length; j++) {
                 if (nums[j] % nums[i] == 0) {
-                    List<Integer> temp = new ArrayList<>(dp.get(j));
-                    temp.add(0, nums[i]);
-                    if (temp.size() > dp.get(i).size()) {
-                        dp.set(i, temp);
+                    List<Integer> jthList = cache.get(j);
+                    List<Integer> ithCurrentList = new ArrayList<>(jthList);
+                    ithCurrentList.add(0, nums[i]);
+                    List<Integer> ithPreviousList = cache.get(i);
+                    if (ithCurrentList.size() > ithPreviousList.size()) {
+                        cache.set(i, ithCurrentList);
                     }
                 }
             }
-            if (dp.get(i).size() > result.size()) {
-                result = dp.get(i);
+
+            if (cache.get(i).size() > result.size()) {
+                result = cache.get(i);
             }
         }
         return result;

@@ -12,8 +12,8 @@ public class NumberOfWaysToDivideALongCorridor {
 
     static
     public int numberOfWays(String corridor) {
-//        return dfs(0, 0, corridor, new Integer[corridor.length() + 1][3]);
-        return combinationMethod(corridor);
+        return dfs(0, 0, corridor, new Integer[corridor.length() + 1][3]);
+//        return combinationMethod(corridor);
     }
 
     /*

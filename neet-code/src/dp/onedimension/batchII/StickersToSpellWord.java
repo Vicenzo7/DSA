@@ -36,7 +36,9 @@ public class StickersToSpellWord {
         return result == Integer.MAX_VALUE ? -1 : result;
     }
 
-    private static int memoization(String target, List<Map<Character, Integer>> stickersFrequencies, Map<String, Integer> dp, HashMap<Character, Integer> stickerFrequencyMap) {
+    private static int memoization(String target, List<Map<Character, Integer>> stickersFrequencies,
+                                   Map<String, Integer> dp,
+                                   Map<Character, Integer> stickerFrequencyMap) {
         if (target.isEmpty()) {
             return 0;
         }
