@@ -36,7 +36,7 @@ public class CarFleet {
 
     public static int carFleet(int target, int[] position, int[] speed) {
         // TC = O(target)  SC = O(target+1)
-        double[] timeArray = new double[target+1];
+        double[] timeArray = new double[target + 1];
         double max = 0;
 
         for (int i = 0; i < position.length; i++) {
@@ -45,7 +45,7 @@ public class CarFleet {
 
         // traverse the time array in reverse order;
         int fleet = 0;
-        for (int i = target; i >= 0 ; i--) {
+        for (int i = target; i >= 0; i--) {
 
             if (timeArray[i] > max) {
                 fleet++;
@@ -53,6 +53,6 @@ public class CarFleet {
             }
         }
 
-       return fleet;
+        return fleet;
     }
 }

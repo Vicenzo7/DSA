@@ -75,7 +75,6 @@ public class  TopologicalSort {
             return false;
         }
 
-        visit.add(source);
         recursionStack.add(source);
 
         for (Integer destination : sourceToDestinationMap.get(source)) {
@@ -85,6 +84,7 @@ public class  TopologicalSort {
         }
         // add only after all neighbors are visited
         topologicalSort.add(source);
+        visit.add(source);
         recursionStack.remove(source);
         return false;
     }

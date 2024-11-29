@@ -35,12 +35,10 @@ public class WordBreak {
         }
 
         for (String word : wordDict) {
-            if (s.startsWith(word)) {
-                // use the word
-                if (memoization(s.substring(word.length()), wordDict, cache)) {
-                    cache.put(s, true);
-                    return true;
-                }
+            // use the word
+            if (s.startsWith(word) && memoization(s.substring(word.length()), wordDict, cache)) {
+                cache.put(s, true);
+                return true;
             }
         }
         cache.put(s, false);

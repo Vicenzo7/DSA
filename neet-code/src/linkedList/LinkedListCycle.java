@@ -34,6 +34,7 @@ public class LinkedListCycle {
                 return true;
             }
         }
+        return false;
 
         // Determining cycle start node
 
@@ -47,7 +48,6 @@ public class LinkedListCycle {
 //        }
 
 
-
 //        ListNode slow2 = head;
 //        while (slow2 != slow) {
 //            slow2 = slow2.next;
@@ -55,6 +55,5 @@ public class LinkedListCycle {
 //        }
 
 //        System.out.println(slow2.val);
-        return false;
     }
 }

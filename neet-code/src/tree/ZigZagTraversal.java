@@ -14,46 +14,44 @@ public class ZigZagTraversal {
 
 
     static List<List<Integer>> result = new ArrayList<>();
-    public  static List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+
+    public static List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         if (root == null)
             return result;
         zigZagTraversal(root);
         return result;
     }
 
-
-    public static void zigZagTraversal(TreeNode root) {
+    static
+    public void zigZagTraversal(TreeNode root) {
+        // Add your code here.
         Deque<TreeNode> deque = new LinkedList<>();
         boolean rightToLeft = false;
         deque.addLast(root);
         while (!deque.isEmpty()) {
             int size = deque.size();
             List<Integer> ans = new ArrayList<>();
-            if (rightToLeft) {
-                //right
-                for (int i = 0; i < size; i++) {
+            for (int i = 0; i < size; i++) {
+                if (rightToLeft) {
+                    // right
                     TreeNode temp = deque.removeLast();
                     ans.add(temp.val);
                     if (temp.right != null)
                         deque.addFirst(temp.right);
                     if (temp.left != null)
                         deque.addFirst(temp.left);
-                }
-                result.add(ans);
-                rightToLeft = false;
-            } else {
-                //left
-                for (int i = 0; i < size; i++) {
-                    TreeNode temp =deque.removeFirst();
+                } else {
+                    // left
+                    TreeNode temp = deque.removeFirst();
                     ans.add(temp.val);
                     if (temp.left != null)
                         deque.addLast(temp.left);
                     if (temp.right != null)
                         deque.addLast(temp.right);
                 }
-                result.add(ans);
-                rightToLeft = true;
             }
+            result.add(ans);
+            rightToLeft = !rightToLeft;
         }
     }
 }

@@ -22,8 +22,6 @@ public class MinimumIntervalToIncludeEachQuery {
         If no such interval exists, the answer is -1.
 
         Return an array containing the answers to the queries.
-
-
     */
 
     public static int[] minInterval(int[][] intervals, int[] queries) {

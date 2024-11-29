@@ -68,7 +68,7 @@ public class CourseSchedule {
 
         // Check if it's possible to finish all courses
         for (int i = 0; i < numCourses; i++) {
-            if (visit[i] == 0 && dfs2(i, courseToPrerequisiteList, visit)) {
+            if (visit[i] == 0 && hasCycle(i, courseToPrerequisiteList, visit)) {
                 return false;
             }
         }
@@ -77,7 +77,7 @@ public class CourseSchedule {
     }
 
     // Depth-first search to explore courses and their prerequisites
-    private static boolean dfs2(int course, List<List<Integer>> courseToPrerequisiteList, int[] visit) {
+    private static boolean hasCycle(int course, List<List<Integer>> courseToPrerequisiteList, int[] visit) {
         // If the course is currently being visited in the cycle, return false
         if (visit[course] == 1) {
             return true; // detected a cycle
@@ -101,7 +101,7 @@ public class CourseSchedule {
         // Explore prerequisites through DFS
         for (Integer prerequisite : prerequisites) {
             // If the prerequisite cannot be completed, return false
-            if (dfs2(prerequisite, courseToPrerequisiteList, visit)) {
+            if (hasCycle(prerequisite, courseToPrerequisiteList, visit)) {
                 return true;
             }
         }

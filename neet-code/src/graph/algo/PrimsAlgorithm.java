@@ -7,7 +7,7 @@ public class PrimsAlgorithm {
     /*
         Minimum Spanning Tree
         What is a minimum spanning tree.
-        If a graph is not a tree it is also not a minimum spanning tree.
+        If a graph  which is not a tree, is also not a minimum spanning tree.
 
         Given a graph find minimum spanning tree, means find a subset of that graph with satisfies
         the tree property and the cost of making that subset is minimum.

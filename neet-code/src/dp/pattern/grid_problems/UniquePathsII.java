@@ -112,25 +112,12 @@ public class UniquePathsII {
         int n = obstacleGrid[0].length;
         int[][] dp = new int[m][n];
 
+        if (obstacleGrid[0][0] == 1) {
+            return 0;
+        }
+
         for (int row = 0; row < m; row++) {
             for (int col = 0; col < n; col++) {
-
-//                if (obstacleGrid[row][col] == 1) {
-//                    // set the number of ways to zero if there's an obstacle
-//                    dp[row][col] = 0;
-//                } else if (row == 0 && col == 0) {
-//                    // to move along the boundaries the unique ways are 1
-//                    dp[row][col] = 1;
-//                } else if (row == 0) {
-//                    // handle first row
-//                    dp[row][col] = dp[row][col - 1];
-//                } else if (col == 0) {
-//                    // handle first col
-//                    dp[row][col] = dp[row - 1][col];
-//                } else {
-//                    // general case;
-//                    dp[row][col] = dp[row - 1][col] + dp[row][col - 1];
-//                }
 
                 if (obstacleGrid[row][col] == 1) {
                     // set the number of ways to zero if there's an obstacle
@@ -138,9 +125,12 @@ public class UniquePathsII {
                 } else if (row == 0 && col == 0) {
                     // to move along the boundaries the unique ways are 1
                     dp[row][col] = 1;
-                } else if (row == 0 || col == 0) {
+                } else if (row == 0) {
                     // handle first row
-                    dp[row][col] = 1;
+                    dp[row][col] = dp[row][col - 1];
+                } else if (col == 0) {
+                    // handle first col
+                    dp[row][col] = dp[row - 1][col];
                 } else {
                     // general case;
                     dp[row][col] = dp[row - 1][col] + dp[row][col - 1];

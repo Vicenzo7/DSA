@@ -63,13 +63,13 @@ public class MinHeap {
             */
             if (2 * i + 1 < heap.size() &&
                     heap.get(2 * i + 1) < heap.get(2 * i) &&
-                    heap.get(i) > heap.get(2 * i + 1)) {
+                    heap.get(2 * i + 1) < heap.get(i)) {
                 // Swap right child
                 int tmp = heap.get(i);
                 heap.set(i, heap.get(2 * i + 1));
                 heap.set(2 * i + 1, tmp);
                 i = 2 * i + 1;
-            } else if (heap.get(i) > heap.get(2 * i)) { // means left child < parent
+            } else if (heap.get(2 * i) < heap.get(i)) { // means left child < parent
                 // Swap left child
                 int tmp = heap.get(i);
                 heap.set(i, heap.get(2 * i));

@@ -10,6 +10,7 @@ public class PermutationInString {
     }
 
     // TC = O(n)
+    // s2 contains permutation of s1 means, no of characters in s1 should be present in s2, can be equal of greater
     public static boolean checkInclusionOptimised(String s1, String s2) {
         // if s2 < s1 return false
         if (s2.length() < s1.length()) {

@@ -35,7 +35,9 @@ public class RegularMatchingExpression {
             // If current characters match or pattern has '.'
             if (i < s.length() && (s.charAt(i) == p.charAt(j) || p.charAt(j) == '.')) {
                 // Try matching 0, 1, or more occurrences of current character
-                return bruteForce(i, j + 2, s, p) || bruteForce(i + 1, j, s, p) || bruteForce(i + 1, j + 2, s, p);
+                return bruteForce(i, j + 2, s, p)
+                        || bruteForce(i + 1, j, s, p)
+                        || bruteForce(i + 1, j + 2, s, p);
             } else {
                 // Skip current character and '*' in pattern
                 return bruteForce(i, j + 2, s, p);
@@ -73,9 +75,8 @@ public class RegularMatchingExpression {
         if (j + 1 < p.length() && p.charAt(j + 1) == '*') {
             // If current characters match or pattern has '.'
             if (matchFirstCharacter) {
-                // Try matching 0, 1, or more occurrences of current character
-                    // don't use star                           use the * once
-                return cache[i][j] = memoization(i, j + 2, s, p, cache)  || memoization(i + 1, j + 2, s, p, cache)
+                return cache[i][j] = memoization(i, j + 2, s, p, cache) // dont use the star
+                        || memoization(i + 1, j + 2, s, p, cache) // use the star
                         || memoization(i + 1, j, s, p, cache); // use the * many times
             } else {
                 // Skip current character and '*' in pattern

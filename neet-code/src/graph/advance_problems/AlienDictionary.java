@@ -13,6 +13,7 @@ public class AlienDictionary {
     }
 
     public static String alienDictionary(String[] words) {
+        // Check if given set of words are valid and if valid create a adjacency list
         Map<String, Set<String>> adjacencyList = new HashMap<>();
         for (int i = 0; i < words.length - 1; i++) {
             // take two pairs or words

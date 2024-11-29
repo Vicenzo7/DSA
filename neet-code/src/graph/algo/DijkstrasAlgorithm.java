@@ -58,7 +58,7 @@ public class DijkstrasAlgorithm {
         Map<String, Integer> nodeToShortestPath = new HashMap<>();
         // stores [weight,Node] in ascending order
         Queue<CustomPair<Integer, String>> minHeap = new PriorityQueue<>(Comparator.comparingInt(CustomPair::getKey));
-        // Initially add source and its cost in minHeap
+        // Initially add cost and source in minHeap
         minHeap.add(new CustomPair<>(0, source));
 
         while (!minHeap.isEmpty()) {
