@@ -41,17 +41,17 @@ public class ValidParentheses {
         if (s.length() % 2 != 0) return false;
 
         Stack<Character> stack = new Stack<>();
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
-            if (stack.isEmpty() && (s.charAt(i) == ')' || s.charAt(i) == ']' || s.charAt(i) == '}')) {
+        for (char ch : s.toCharArray()) {
+            if (stack.isEmpty() && (ch == '}' || ch == ')' || ch == ']')) {
                 return false;
+            } else if (ch == '}' && stack.peek() == '{') {
+                stack.pop();
+            } else if (ch == ']' && stack.peek() == '[') {
+                stack.pop();
+            } else if (ch == ')' && stack.peek() == '(') {
+                stack.pop();
             } else {
-                if (ch == ')' && stack.peek() == '(') stack.pop();
-                else if (ch == ']' && stack.peek() == '[') stack.pop();
-                else if (ch == '}' && stack.peek() == '{') stack.pop();
-                else {
-                    stack.add(ch);
-                }
+                stack.add(ch);
             }
         }
         return stack.isEmpty();

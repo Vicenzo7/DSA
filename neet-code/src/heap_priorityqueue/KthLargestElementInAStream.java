@@ -2,7 +2,7 @@ package heap_priorityqueue;
 
 import java.util.PriorityQueue;
 
-public class KthLargest {
+public class KthLargestElementInAStream {
 
     /*
         Intuition: Min Heap of size K
@@ -28,7 +28,7 @@ public class KthLargest {
 
     private int k;
 
-    public KthLargest(int k, int[] nums) {
+    public KthLargestElementInAStream(int k, int[] nums) {
         heap = new PriorityQueue<>();
         this.k = k;
         for (int num : nums) {
@@ -48,7 +48,7 @@ public class KthLargest {
     }
 
     public static void main(String[] args) {
-        KthLargest kthLargest = new KthLargest(3, new int[]{4, 5, 8, 2});
+        KthLargestElementInAStream kthLargest = new KthLargestElementInAStream(3, new int[]{4, 5, 8, 2});
 
         System.out.println(kthLargest.add(3));
         System.out.println(kthLargest.add(5));

@@ -117,7 +117,8 @@ public class Heap {
 
 **Advantage of heap over binary search tree, we can get min or max in O(1). In binary tree it's O(log(n))**
 
-To  build a binary tree of n elements take `O(n * log(n))`  time 
+To  build a binary tree of n elements take `O(n * log(n))`  time
+Looking up a node in a binary tree is O(log(n)) because the tree has log(n) levels (each level holds twice as much as the level above it). Therefore to create/insert n elements into a binary tree it's `O(nlog(n))` .
 
 Given a set or a list of elements we can construct heap in `O(n)` using heapify algo
 

@@ -25,11 +25,11 @@ class Twitter {
         PriorityQueue<CustomPair<Integer, Integer>> allTweets = new PriorityQueue<>(
                 (o1, o2) -> Integer.compare(o2.getKey(), o1.getKey()));
 
-        List<CustomPair<Integer, Integer>> userTweets = userIdToTweets.getOrDefault(userId,new ArrayList<>());
+        List<CustomPair<Integer, Integer>> userTweets = userIdToTweets.getOrDefault(userId, new ArrayList<>());
         allTweets.addAll(userTweets);
-        Set<Integer> followee = userIdToFollowedUserMap.getOrDefault(userId,new HashSet<>());
+        Set<Integer> followee = userIdToFollowedUserMap.getOrDefault(userId, new HashSet<>());
         for (Integer followeeId : followee) {
-            List<CustomPair<Integer, Integer>> followeeTweets = userIdToTweets.getOrDefault(followeeId,new ArrayList<>());
+            List<CustomPair<Integer, Integer>> followeeTweets = userIdToTweets.getOrDefault(followeeId, new ArrayList<>());
             allTweets.addAll(followeeTweets);
         }
 

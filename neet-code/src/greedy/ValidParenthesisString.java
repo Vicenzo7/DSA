@@ -33,6 +33,24 @@ public class ValidParenthesisString {
     */
 
 
+
+    /*
+        minOpenBracket:
+
+        Tracks the minimum possible number of unmatched opening parentheses ( at any point.
+        This can go down (decrease) because * can act as a closing parenthesis ) or be ignored entirely.
+        It is reset to 0 whenever it becomes negative, because negative values would mean there are no unmatched opening brackets at that point.
+
+        maxOpenBracket:
+
+        Tracks the maximum possible number of unmatched opening parentheses (.
+        This increases for each ( or * that could act as an opening parenthesis.
+
+        The condition minOpenBracket == 0 ensures that after processing the string,
+        all unmatched ( (if any) have been successfully balanced by corresponding ) or *.
+    */
+
+
     public static boolean checkValidString(String s) {
         int minOpenBracket = 0; // minimum open bracket
         int maxOpenBracket = 0; // maximum open bracket
