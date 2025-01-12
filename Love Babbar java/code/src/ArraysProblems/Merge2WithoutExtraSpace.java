@@ -13,7 +13,7 @@ public class Merge2WithoutExtraSpace {
         System.out.println(Arrays.toString(arr2));
     }
 
-    static void merge(int[] arr1, int arr2[], int n, int m) {
+    static void merge(int[] arr1, int[] arr2, int n, int m) {
         // code here
         int i, k;
         for (i = 0; i < n; i++) {

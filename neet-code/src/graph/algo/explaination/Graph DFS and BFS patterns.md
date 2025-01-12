@@ -24,7 +24,7 @@ public static int dfs(int[][] grid, int row, int col, int[][] visit) {
     count += dfs(grid, row, col + 1, visit); // right  
     count += dfs(grid, row - 1, col, visit); // up  
     count += dfs(grid, row + 1, col, visit); // down  
-  
+  https://adjettercrm.atlassian.net/browse/PP-4255
     visit[row][col] = 0;  
     return count;  
 }

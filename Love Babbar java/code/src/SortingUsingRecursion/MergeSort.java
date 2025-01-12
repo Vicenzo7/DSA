@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MergeSort {
     public static void main(String[] args) {
-        int[] arr = {3,7,0,5,1,45,8,6,9,1,2,12,1,2,12,12,46,13,88,96,24};
+        int[] arr = {3, 7, 0, 5, 1, 45, 8, 6, 9, 1, 2, 12, 1, 2, 12, 12, 46, 13, 88, 96, 24};
 
         mergeSort(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(arr));
@@ -13,8 +13,7 @@ public class MergeSort {
     private static void mergeSort(int[] arr, int start, int end) {
 
         //base case
-        if (start >= end)
-            return;
+        if (start >= end) return;
 
         int mid = start + (end - start) / 2;
 
@@ -34,8 +33,8 @@ public class MergeSort {
         int len1 = mid - start + 1;
         int len2 = end - mid;
         //creating two arrays
-        int[] first = Arrays.copyOfRange(arr,start,mid+1);
-        int[] second = Arrays.copyOfRange(arr,mid+1,end+1);
+        int[] first = Arrays.copyOfRange(arr, start, mid + 1);
+        int[] second = Arrays.copyOfRange(arr, mid + 1, end + 1);
 
         //copying values
         int mainArrayIndex = start;
@@ -60,12 +59,10 @@ public class MergeSort {
             }
         }
 
-        while(index1 < len1)
-        {
+        while (index1 < len1) {
             arr[mainArrayIndex++] = first[index1++];
         }
-        while(index2 < len2)
-        {
+        while (index2 < len2) {
             arr[mainArrayIndex++] = second[index2++];
         }
 

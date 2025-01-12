@@ -54,7 +54,7 @@ public class PrimsAlgorithm {
 
         List<int[]> mst = new ArrayList<>();
         Set<Integer> visit = new HashSet<>();
-        // (weight, source,destination)
+        // (weight, source, destination)
         PriorityQueue<int[]> minHeap = new PriorityQueue<>(Comparator.comparingInt(o -> o[0]));
         // since the nodes are starting from 1 to n, we will initially add all neighbours of 1 in minHeap and add 1 in visit
         // Initialize the heap by choosing a single node

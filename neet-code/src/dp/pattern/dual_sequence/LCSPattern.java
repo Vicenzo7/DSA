@@ -3,7 +3,7 @@ package dp.pattern.dual_sequence;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LCSPattern {
+public class    LCSPattern {
     public static void main(String[] args) {
 //        String text1 = "abcde", text2 = "ace";
         String text1 = "abac", text2 = "cab";

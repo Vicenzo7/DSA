@@ -57,6 +57,10 @@ public class ClimbingStairs {
     }
 
     public static int dpOptimised(int n) {
+        if(n <= 2) {
+            return n;
+        }
+
         int first = 1;
         int second = 2;
         int next = 0;

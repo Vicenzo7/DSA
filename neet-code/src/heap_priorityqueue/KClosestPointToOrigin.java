@@ -57,7 +57,9 @@ public class KClosestPointToOrigin {
 
     public static int[][] kClosestOptimised(int[][] points, int k) {
 
-        PriorityQueue<int[]> minHeap = new PriorityQueue<>(Comparator.comparingInt(o -> o[0] * o[0] + o[1] * o[1])
+        PriorityQueue<int[]> minHeap = new PriorityQueue<>(
+                // since the sqrt function is monotonically increasing
+                Comparator.comparingInt(o -> o[0] * o[0] + o[1] * o[1])
         );
 
         for (int[] point : points) {
