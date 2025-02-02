@@ -65,7 +65,8 @@ public class  TopologicalSort {
         return topologicalSort;
     }
 
-    private static boolean dfs(int source, Map<Integer, List<Integer>> sourceToDestinationMap, Set<Integer> visit, List<Integer> topologicalSort, Set<Integer> recursionStack) {
+    private static boolean dfs(int source, Map<Integer, List<Integer>> sourceToDestinationMap, Set<Integer> visit,
+                               List<Integer> topologicalSort, Set<Integer> recursionStack) {
         if (recursionStack.contains(source)) {
             // cycle detected
             return true;
